@@ -56,6 +56,7 @@
             <a class="transition hover:text-[#111111]" href="#">Predicas</a>
           </nav>
           <button
+            id="mobile-menu-button"
             class="rounded-full border border-[#d2c8b8] px-4 py-2 text-sm font-semibold text-[#3f3f3f] transition hover:border-[#111111] md:hidden"
           >
             Menu
@@ -64,11 +65,13 @@
 
         <!-- Hero Section - 3 Column Layout -->
         <section class="mt-12">
+          <!-- on mobile col should be 100% -->
           <div
-            class="grid grid-cols-[7.5%_85%_7.5%] gap-6 items-center min-h-[400px]"
+            class="grid grid-cols-1 lg:grid-cols-[7.5%_85%_7.5%] gap-6 items-center min-h-[400px]"
           >
             <!-- Column 1: Left Images -->
-            <div class="space-y-4">
+            <!-- hide on mobile -->
+            <div class="space-y-4 hidden lg:block">
               <!-- Top image - 1:1 aspect ratio -->
               <div
                 class="aspect-square bg-cover bg-center rounded-2xl"
@@ -88,7 +91,7 @@
               <!-- 3 Images in a row above text -->
               <div class="flex justify-between items-center mb-6">
                 <div
-                  class="aspect-[1/2] bg-cover bg-center rounded-xl h-64 w-20"
+                  class="aspect-[1/2] bg-cover bg-center rounded-xl h-64 w-20 hidden lg:block"
                   style="background-image: url('images/edificadoresonline_10.webp');"
                 >
                 </div>
@@ -112,7 +115,7 @@
                   </div>
                 </div>
                 <div
-                  class="aspect-[1/2] bg-cover bg-center rounded-xl h-64 w-20"
+                  class="aspect-[1/2] bg-cover bg-center rounded-xl h-64 w-20 hidden lg:block"
                   style="background-image: url('images/edificadoresonline_3.webp');"
                 >
                 </div>
@@ -135,7 +138,7 @@
             </div>
 
             <!-- Column 3: Right Images -->
-            <div class="space-y-4">
+            <div class="space-y-4 hidden lg:block">
               <!-- Top image - 1:1 aspect ratio -->
               <div
                 class="aspect-square bg-cover bg-center rounded-2xl"
@@ -333,5 +336,65 @@
         </footer>
       </div>
     </main>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-50 bg-[#f7f1e7] transform translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+    >
+      <div
+        class="flex items-center justify-between p-6 border-b border-[#e1d7c7]"
+      >
+        <a href="/">
+          <img
+            src="images/edificadoresonline_logo.webp"
+            alt="Edificadores Online Logo"
+            class="h-10 w-auto"
+          />
+        </a>
+        <button
+          id="close-menu-button"
+          class="rounded-full border border-[#d2c8b8] px-4 py-2 text-sm font-semibold text-[#3f3f3f] transition hover:border-[#111111]"
+        >
+          Cerrar
+        </button>
+      </div>
+      <nav class="flex flex-col gap-6 p-6 text-lg font-semibold text-[#3f3f3f]">
+        <a class="transition hover:text-[#111111] text-[#111111]" href="/"
+          >Inicio</a
+        >
+        <a class="transition hover:text-[#111111]" href="/discipulados"
+          >Discipulados</a
+        >
+        <a class="transition hover:text-[#111111]" href="#">Diplomados</a>
+        <a class="transition hover:text-[#111111]" href="#">Predicas</a>
+      </nav>
+    </div>
+
+    <script>
+      // Mobile menu functionality
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const closeMenuButton = document.getElementById("close-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton?.addEventListener("click", () => {
+        mobileMenu?.classList.remove("translate-x-full");
+        mobileMenu?.classList.add("translate-x-0");
+      });
+
+      closeMenuButton?.addEventListener("click", () => {
+        mobileMenu?.classList.add("translate-x-full");
+        mobileMenu?.classList.remove("translate-x-0");
+      });
+
+      // Close menu when clicking on a link
+      const mobileMenuLinks = mobileMenu?.querySelectorAll("a");
+      mobileMenuLinks?.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu?.classList.add("translate-x-full");
+          mobileMenu?.classList.remove("translate-x-0");
+        });
+      });
+    </script>
   </body>
 </html>

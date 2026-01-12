@@ -56,6 +56,7 @@
             <a class="transition hover:text-[#111111]" href="#">Predicas</a>
           </nav>
           <button
+            id="mobile-menu-button"
             class="rounded-full border border-[#d2c8b8] px-4 py-2 text-sm font-semibold text-[#3f3f3f] transition hover:border-[#111111] md:hidden"
           >
             Menu
@@ -166,7 +167,7 @@
               <p class="text-sm font-semibold text-[#2e2a26]">
                 Edificadores.org
               </p>
-              <div class="mt-3 flex items-center gap-3">
+              <!-- <div class="mt-3 flex items-center gap-3">
                 <span
                   class="h-8 w-8 rounded-full border border-[#d2c8b8] flex items-center justify-center hover:bg-[#d2c8b8] transition cursor-pointer"
                 >
@@ -182,7 +183,7 @@
                 >
                   <span class="text-xs">#</span>
                 </span>
-              </div>
+              </div> -->
             </div>
             <div class="flex flex-col gap-2 text-sm">
               <a class="transition hover:text-[#1c1c1c]" href="/">Inicio</a>
@@ -196,5 +197,64 @@
         </footer>
       </div>
     </main>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-50 bg-[#f7f1e7] transform translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+    >
+      <div
+        class="flex items-center justify-between p-6 border-b border-[#e1d7c7]"
+      >
+        <a href="/">
+          <img
+            src="/images/edificadoresonline_logo.webp"
+            alt="Edificadores Online Logo"
+            class="h-10 w-auto"
+          />
+        </a>
+        <button
+          id="close-menu-button"
+          class="rounded-full border border-[#d2c8b8] px-4 py-2 text-sm font-semibold text-[#3f3f3f] transition hover:border-[#111111]"
+        >
+          Cerrar
+        </button>
+      </div>
+      <nav class="flex flex-col gap-6 p-6 text-lg font-semibold text-[#3f3f3f]">
+        <a class="transition hover:text-[#111111]" href="/">Inicio</a>
+        <a
+          class="transition hover:text-[#111111] text-[#111111]"
+          href="/discipulados">Discipulados</a
+        >
+        <a class="transition hover:text-[#111111]" href="#">Diplomados</a>
+        <a class="transition hover:text-[#111111]" href="#">Predicas</a>
+      </nav>
+    </div>
+
+    <script>
+      // Mobile menu functionality
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const closeMenuButton = document.getElementById("close-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton?.addEventListener("click", () => {
+        mobileMenu?.classList.remove("translate-x-full");
+        mobileMenu?.classList.add("translate-x-0");
+      });
+
+      closeMenuButton?.addEventListener("click", () => {
+        mobileMenu?.classList.add("translate-x-full");
+        mobileMenu?.classList.remove("translate-x-0");
+      });
+
+      // Close menu when clicking on a link
+      const mobileMenuLinks = mobileMenu?.querySelectorAll("a");
+      mobileMenuLinks?.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu?.classList.add("translate-x-full");
+          mobileMenu?.classList.remove("translate-x-0");
+        });
+      });
+    </script>
   </body>
 </html>
