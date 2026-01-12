@@ -1,4 +1,5 @@
 ---
+
 ---
 
 <html lang="en">
@@ -8,16 +9,326 @@
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Edificadores Online</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    <main class="min-h-screen flex items-center justify-center bg-gray-100">
-      <div class="text-center">
-        <h1 class="text-4xl font-bold text-gray-900 mb-4">
-          Welcome
-        </h1>
-        <p class="text-lg text-gray-600">
-          Welcome to Edificadores Online
-        </p>
+  <body
+    class="bg-[#f7f1e7] text-[#1c1c1c]"
+    style="font-family: 'Manrope', sans-serif;"
+  >
+    <main class="relative overflow-hidden">
+      <div class="pointer-events-none absolute inset-0">
+        <div
+          class="absolute inset-0 bg-[radial-gradient(circle_at_top,_#f1e7d7_0,_transparent_55%)]"
+        >
+        </div>
+        <div
+          class="absolute inset-0 bg-[radial-gradient(circle_at_80%_15%,_#ece1cf_0,_transparent_45%)]"
+        >
+        </div>
+      </div>
+
+      <div class="relative mx-auto max-w-6xl px-6 py-10 lg:px-10 lg:py-14">
+        <header class="flex items-center justify-between gap-6">
+          <div class="flex items-center gap-3">
+            <img
+              src="images/edificadoresonline_logo.webp"
+              alt="Edificadores Online Logo"
+              class="h-10 w-auto"
+            />
+          </div>
+          <nav
+            class="hidden items-center gap-6 text-sm font-semibold text-[#3f3f3f] md:flex"
+          >
+            <a class="transition hover:text-[#111111] text-[#111111]" href="/"
+              >Inicio</a
+            >
+            <a class="transition hover:text-[#111111]" href="/discipulados"
+              >Discipulados</a
+            >
+            <a class="transition hover:text-[#111111]" href="#">Diplomados</a>
+            <a class="transition hover:text-[#111111]" href="#">Predicas</a>
+          </nav>
+          <button
+            class="rounded-full border border-[#d2c8b8] px-4 py-2 text-sm font-semibold text-[#3f3f3f] transition hover:border-[#111111] md:hidden"
+          >
+            Menu
+          </button>
+        </header>
+
+        <!-- Hero Section - 3 Column Layout -->
+        <section class="mt-12">
+          <div
+            class="grid grid-cols-[7.5%_85%_7.5%] gap-6 items-center min-h-[400px]"
+          >
+            <!-- Column 1: Left Images -->
+            <div class="space-y-4">
+              <!-- Top image - 1:1 aspect ratio -->
+              <div
+                class="aspect-square bg-cover bg-center rounded-2xl"
+                style="background-image: url('images/edificadoresonline_11.webp');"
+              >
+              </div>
+              <!-- Bottom image - 1:2 aspect ratio (tall) -->
+              <div
+                class="aspect-[1/2] bg-cover bg-center rounded-2xl"
+                style="background-image: url('images/edificadoresonline_12.webp');"
+              >
+              </div>
+            </div>
+
+            <!-- Column 2: Center Content -->
+            <div class="text-center space-y-6 px-4">
+              <!-- 3 Images in a row above text -->
+              <div class="flex justify-between items-center mb-6">
+                <div
+                  class="aspect-[1/2] bg-cover bg-center rounded-xl h-64 w-20"
+                  style="background-image: url('images/edificadoresonline_10.webp');"
+                >
+                </div>
+                <div
+                  class="flex-1 justify-between mx-4 grid grid-cols-3 gap-2 items-start"
+                >
+                  <div
+                    class="aspect-[4/3] bg-cover bg-center rounded-lg"
+                    style="background-image: url('images/edificadoresonline_2.webp');"
+                  >
+                  </div>
+                  <div
+                    class="aspect-[4/3] bg-cover bg-center rounded-lg"
+                    style="background-image: url('images/edificadoresonline_1.webp');"
+                  >
+                  </div>
+                  <div
+                    class="aspect-[4/3] bg-cover bg-center rounded-lg"
+                    style="background-image: url('images/edificadoresonline_9.webp');"
+                  >
+                  </div>
+                </div>
+                <div
+                  class="aspect-[1/2] bg-cover bg-center rounded-xl h-64 w-20"
+                  style="background-image: url('images/edificadoresonline_3.webp');"
+                >
+                </div>
+              </div>
+
+              <!-- Text content -->
+              <h1
+                class="text-5xl lg:text-6xl font-bold text-[#1c1c1c]"
+                style="font-family: 'Playfair Display', serif;"
+              >
+                EdificaOnline
+              </h1>
+              <h2 class="text-xl lg:text-2xl font-semibold text-[#2d2d2d]">
+                La Guía Para Tu Crecimiento Espiritual
+              </h2>
+              <p class="text-sm text-[#4a4a4a]">
+                12 meses, 12 mentores y una ruta clara para conocer el carácter
+                de Dios en 2026.
+              </p>
+            </div>
+
+            <!-- Column 3: Right Images -->
+            <div class="space-y-4">
+              <!-- Top image - 1:1 aspect ratio -->
+              <div
+                class="aspect-square bg-cover bg-center rounded-2xl"
+                style="background-image: url('images/edificadoresonline_5.webp');"
+              >
+              </div>
+              <!-- Bottom image - 1:2 aspect ratio (tall) -->
+              <div
+                class="aspect-[1/2] bg-cover bg-center rounded-2xl"
+                style="background-image: url('images/edificadoresonline_8.webp');"
+              >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mt-16 space-y-6">
+          <div class="grid gap-6 lg:grid-cols-[1.4fr_0.6fr] h-64">
+            <div class="relative overflow-hidden rounded-[32px]">
+              <img
+                class="h-full w-full object-cover"
+                src="images/edificadoresonline_6.webp"
+                alt="Discipulados"
+              />
+              <div
+                class="absolute inset-0 flex items-end justify-end bg-[linear-gradient(180deg,rgba(0,0,0,0)_40%,rgba(0,0,0,0.55)_100%)] p-6"
+              >
+                <span class="text-2xl font-semibold text-white"
+                  >Discipulados</span
+                >
+              </div>
+            </div>
+            <div
+              class="flex h-full flex-col justify-between rounded-[28px] bg-[#efe6d8] p-6 text-[#3f3a35]"
+            >
+              <p class="text-sm leading-relaxed">
+                Un tema teologico cada mes con video, presentacion y bosquejos
+                descargables.
+              </p>
+              <button
+                class="mt-6 flex w-fit items-center gap-2 rounded-full bg-[#1c1c1c] px-4 py-2 text-xs font-semibold text-[#f7f1e7]"
+              >
+                Iniciar
+                <span
+                  class="grid h-5 w-5 place-items-center rounded-full border border-[#f7f1e7]"
+                  >-&gt;</span
+                >
+              </button>
+            </div>
+          </div>
+
+          <div class="grid gap-6 lg:grid-cols-[0.7fr_1.3fr] h-64">
+            <div
+              class="flex h-full flex-col justify-between rounded-[28px] bg-[#5b6a4b] p-6 text-[#f4efe6]"
+            >
+              <p class="text-sm leading-relaxed">
+                Un tema teologico cada mes con video, presentacion y bosquejos
+                descargables.
+              </p>
+              <button
+                class="mt-6 flex w-fit items-center gap-2 rounded-full bg-[#1c1c1c] px-4 py-2 text-xs font-semibold text-[#f7f1e7]"
+              >
+                Iniciar
+                <span
+                  class="grid h-5 w-5 place-items-center rounded-full border border-[#f7f1e7]"
+                  >-&gt;</span
+                >
+              </button>
+            </div>
+            <div class="relative overflow-hidden rounded-[32px]">
+              <img
+                class="h-full w-full object-cover"
+                src="images/edificadoresonline_20.webp"
+                alt="Diplomados"
+              />
+              <div
+                class="absolute inset-0 flex items-end justify-end bg-[linear-gradient(180deg,rgba(0,0,0,0)_40%,rgba(0,0,0,0.55)_100%)] p-6"
+              >
+                <span class="text-2xl font-semibold text-white">Diplomados</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="grid gap-6 lg:grid-cols-[1.4fr_0.6fr] h-64">
+            <div class="relative overflow-hidden rounded-[32px]">
+              <img
+                class="h-full w-full object-cover"
+                src="images/edificadoresonline_13.webp"
+                alt="Predicas"
+              />
+              <div
+                class="absolute inset-0 flex items-end justify-end bg-[linear-gradient(180deg,rgba(0,0,0,0)_40%,rgba(0,0,0,0.55)_100%)] p-6"
+              >
+                <span class="text-2xl font-semibold text-white">Predicas</span>
+              </div>
+            </div>
+            <div
+              class="flex h-full flex-col justify-between rounded-[28px] bg-[#efe6d8] p-6 text-[#3f3a35]"
+            >
+              <p class="text-sm leading-relaxed">
+                Acceso directo a las predicas de nuestros servicios de 7:00 am,
+                9:00 am y 11:00 am.
+              </p>
+              <button
+                class="mt-6 flex w-fit items-center gap-2 rounded-full bg-[#1c1c1c] px-4 py-2 text-xs font-semibold text-[#f7f1e7]"
+              >
+                Iniciar
+                <span
+                  class="grid h-5 w-5 place-items-center rounded-full border border-[#f7f1e7]"
+                  >-&gt;</span
+                >
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="mt-16 space-y-6 text-center">
+          <div class="space-y-2">
+            <h2
+              class="text-3xl font-semibold"
+              style="font-family: 'Playfair Display', serif;"
+            >
+              ADN Edificadores
+            </h2>
+            <p class="mx-auto max-w-2xl text-sm text-[#4a4a4a]">
+              EdificadoresOnline es el brazo de formacion de nuestra iglesia,
+              bajo la cobertura de los Pastores Blanco.
+            </p>
+          </div>
+          <div class="overflow-hidden rounded-[32px] h-96">
+            <img
+              class="h-full w-full object-cover"
+              src="images/edificadoresonline_14.webp"
+              alt="ADN Edificadores"
+            />
+          </div>
+        </section>
+
+        <!-- <section class="mt-16 space-y-6">
+          <div class="space-y-2">
+            <h2 class="text-3xl font-semibold" style="font-family: 'Playfair Display', serif;">
+              Nuestra comunidad
+            </h2>
+            <p class="text-sm text-[#4a4a4a]">Historias reales de crecimiento dentro de EdificadoresOnline.</p>
+          </div>
+          <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {Array.from({ length: 4 }).map((_, index) => (
+              <div class="rounded-[22px] border border-[#e2d8c8] bg-[#fbf7f0] p-5 shadow-[0_10px_20px_rgba(17,17,17,0.06)]">
+                <p class="text-sm font-semibold text-[#2e2a26]">"Un elogio magnifico"</p>
+                <p class="mt-2 text-xs text-[#6a5f54]">
+                  Un feedback fantastico sobre el impacto del programa.
+                </p>
+                <div class="mt-4 flex items-center gap-3 text-xs text-[#6a5f54]">
+                  <img
+                    class="h-9 w-9 rounded-full object-cover"
+                    src={`https://placehold.co/72x72?text=${index + 1}`}
+                    alt={`Miembro ${index + 1}`}
+                  />
+                  <div>
+                    <p class="font-semibold text-[#2e2a26]">Nombre</p>
+                    <p>Descripcion</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section> -->
+
+        <footer
+          class="mt-16 border-t border-[#e1d7c7] py-8 text-xs text-[#6a5f54]"
+        >
+          <div
+            class="flex flex-col items-start justify-between gap-6 md:flex-row"
+          >
+            <div>
+              <p class="text-sm font-semibold text-[#2e2a26]">
+                Edificadores.org
+              </p>
+              <!-- <div class="mt-3 flex items-center gap-3">
+                <span class="h-8 w-8 rounded-full border border-[#d2c8b8]"></span>
+                <span class="h-8 w-8 rounded-full border border-[#d2c8b8]"></span>
+                <span class="h-8 w-8 rounded-full border border-[#d2c8b8]"></span>
+              </div> -->
+            </div>
+            <div class="flex flex-col gap-2 text-sm">
+              <a class="transition hover:text-[#1c1c1c]" href="/">Inicio</a>
+              <a class="transition hover:text-[#1c1c1c]" href="/discipulados"
+                >Discipulados</a
+              >
+              <a class="transition hover:text-[#1c1c1c]" href="#">Diplomados</a>
+              <a class="transition hover:text-[#1c1c1c]" href="#">Predicas</a>
+            </div>
+          </div>
+        </footer>
       </div>
     </main>
   </body>
