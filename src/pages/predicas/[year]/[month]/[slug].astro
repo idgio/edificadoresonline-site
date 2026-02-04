@@ -34,23 +34,30 @@ const { entry, month: monthData } = result;
 const coverImage = normalizeImageUrl(entry.imageUrl ?? null);
 const monthLabel = monthData.month;
 
-const stripMarkdown = (text: string) =>
-  text.replace(/\*\*(.*?)\*\*/g, "$1").replace(/`/g, "");
+const escapeHtml = (text: string) =>
+  text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+const renderInline = (text: string) =>
+  escapeHtml(text).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+
+const normalizeListLine = (line: string) =>
+  line.trim().replace(/^[-•]\s*/, "");
 
 const contentBlocks = entry.content
   .split("\n\n")
   .map((block) => block.trim())
   .filter(Boolean)
   .map((block) => {
-    if (block.startsWith("-")) {
+    const trimmed = block.trim();
+    const isListBlock = trimmed.startsWith("-") || trimmed.startsWith("•");
+    if (isListBlock) {
       const items = block
         .split("\n")
-        .map((line) => line.replace(/^-\\s*/, "").trim())
-        .map(stripMarkdown)
+        .map((line) => normalizeListLine(line))
         .filter(Boolean);
       return { type: "list", items } as const;
     }
-    return { type: "paragraph", text: stripMarkdown(block) } as const;
+    return { type: "paragraph", text: trimmed } as const;
   });
 
 const formatDate = (value: string) => {
@@ -105,11 +112,11 @@ const monthPath = `/predicas/${year}/${month}`;
           block.type === "list" ? (
             <ul class="list-disc pl-5 space-y-1">
               {block.items.map((item) => (
-                <li>{item}</li>
+                <li set:html={renderInline(item)} />
               ))}
             </ul>
           ) : (
-            <p>{block.text}</p>
+            <p set:html={renderInline(block.text)} />
           )
         )}
       </div>
