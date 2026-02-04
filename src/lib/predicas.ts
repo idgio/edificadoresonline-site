@@ -34,7 +34,7 @@ const predicasByYear: Record<number, PredicaMonth[]> = {
   2026: predicas2026 as PredicaMonth[],
 };
 
-const DEFAULT_IMAGE = "/images/edificadoresonline_logo.webp";
+export const DEFAULT_IMAGE = "/images/edificadoresonline_logo.webp";
 
 const availableYears = Object.keys(predicasByYear)
   .map((year) => Number(year))
@@ -67,6 +67,9 @@ export const normalizeImageUrl = (url?: string | null) => {
 
 export const withDefaultImage = (url?: string | null) =>
   normalizeImageUrl(url) ?? DEFAULT_IMAGE;
+
+export const isDefaultImage = (url?: string | null) =>
+  (url ?? null) === DEFAULT_IMAGE;
 
 const buildPredicaSlug = (predica: Predica) =>
   slugify(`${predica.title}-${predica.date}`);

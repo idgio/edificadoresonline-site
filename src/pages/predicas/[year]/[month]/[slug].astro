@@ -5,6 +5,7 @@ import {
   getPredicaMonths,
   findPredicaEntry,
   normalizeImageUrl,
+  isDefaultImage,
 } from "@/lib/predicas";
 
 export function getStaticPaths() {
@@ -32,6 +33,7 @@ if (!result) {
 
 const { entry, month: monthData } = result;
 const coverImage = normalizeImageUrl(entry.imageUrl ?? null);
+const isCoverFallback = isDefaultImage(coverImage);
 const monthLabel = monthData.month;
 
 const escapeHtml = (text: string) =>
@@ -82,6 +84,17 @@ const embedUrl = videoId
 const relatedEntries = monthData.entries.filter(
   (item) => item.slug !== entry.slug
 );
+
+const shuffle = <T,>(items: T[]) => {
+  const result = [...items];
+  for (let i = result.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+};
+
+const randomRelated = shuffle(relatedEntries);
 
 const monthPath = `/predicas/${year}/${month}`;
 ---
@@ -155,7 +168,6 @@ const monthPath = `/predicas/${year}/${month}`;
           </div>
         )}
       </div>
-
     </div>
   </section>
 
@@ -163,7 +175,7 @@ const monthPath = `/predicas/${year}/${month}`;
     <section class="mt-12 space-y-6">
       <h2 class="text-xl font-semibold text-[#1c1c1c]">Más prédicas</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {relatedEntries.slice(0, 4).map((item) => (
+        {randomRelated.slice(0, 4).map((item) => (
           <a
             href={`/predicas/${year}/${month}/${item.slug}`}
             class="space-y-3"
@@ -175,7 +187,11 @@ const monthPath = `/predicas/${year}/${month}`;
                 <img
                   src={item.imageUrl}
                   alt={item.title}
-                  class="h-full w-full object-cover"
+                  class={`h-full w-full ${
+                    isDefaultImage(item.imageUrl)
+                      ? "object-contain bg-[#f7f1e7]"
+                      : "object-cover"
+                  }`}
                 />
               ) : (
                 <div class="flex h-full items-center justify-center">
