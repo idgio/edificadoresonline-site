@@ -1,0 +1,40 @@
+---
+const { class: className = "" } = Astro.props;
+const pathname = Astro.url.pathname;
+const normalizedPathname =
+  pathname !== "/" && pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
+const isHome = normalizedPathname === "/";
+const isDiscipulados = normalizedPathname.startsWith("/discipulados");
+const isPredicas = normalizedPathname.startsWith("/predicas");
+const linkClass = (isActive: boolean) =>
+  `transition hover:text-[#111111]${isActive ? " text-[#111111]" : ""}`;
+const headerClass = ["flex items-center justify-between gap-6", className]
+  .filter(Boolean)
+  .join(" ");
+---
+
+<header class={headerClass}>
+  <div class="flex items-center gap-3">
+    <a href="/">
+      <img
+        src="/images/edificadoresonline_logo.webp"
+        alt="Edificadores Online Logo"
+        class="h-10 w-auto"
+      />
+    </a>
+  </div>
+  <nav
+    class="hidden items-center gap-6 text-sm font-semibold text-[#3f3f3f] md:flex"
+  >
+    <a class={linkClass(isHome)} href="/">Inicio</a>
+    <a class={linkClass(isDiscipulados)} href="/discipulados">Discipulados</a>
+    <a class="transition hover:text-[#111111]" href="#">Diplomados</a>
+    <a class={linkClass(isPredicas)} href="/predicas">Prédicas</a>
+  </nav>
+  <button
+    id="mobile-menu-button"
+    class="rounded-full border border-[#d2c8b8] px-4 py-2 text-sm font-semibold text-[#3f3f3f] transition hover:border-[#111111] md:hidden"
+  >
+    Menú
+  </button>
+</header>
