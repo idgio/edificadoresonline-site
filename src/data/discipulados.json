@@ -1,0 +1,58 @@
+[
+  {
+    "id": "2026-enero",
+    "year": 2026,
+    "month": "Enero",
+    "monthIndex": 1,
+    "slug": "enero",
+    "title": "Jehová SKOPÓS",
+    "subtitle": "El Dios de Propósitos.",
+    "heroBlurb": "Este mes no buscamos más actividades; buscamos alineación. Jehová Skopós no reacciona: diseña.",
+    "summary": "Este mes no buscamos más actividades; buscamos alineación. Jehová Skopós no reacciona: diseña.",
+    "verseTitle": "Dios confirma lo que determina.",
+    "verseRef": "Isaías 14:24 (RVR09)",
+    "verseText": "Jehová de los ejércitos juró, diciendo: Ciertamente se hará de la manera que lo he pensado, y será confirmado como lo he determinado.",
+    "application": "Deje de pedir \"señales\" para lo que ya está claro: obediencia primero, claridad después...",
+    "downloads": [
+      {
+        "label": "Descargar Material Didáctico",
+        "url": "https://pub-44f34ebdb92a49c3b40a76dc6f94bf2e.r2.dev/discipulado/2026/Temas%20de%20Enero.pdf"
+      },
+      {
+        "label": "Descargar Presentación",
+        "url": "https://pub-44f34ebdb92a49c3b40a76dc6f94bf2e.r2.dev/discipulado/2026/PPT%20TEMA%201%20REFUGIO%20ENERO.pdf"
+      }
+    ],
+    "videoUrl": "https://www.youtube-nocookie.com/embed/sbLrxhjAQq8?si=wZ1xCZE5f5_G1lEY",
+    "coverImage": "/images/discipulado-covers/enero.webp",
+    "metaTitle": "Enero 2026 - Jehová SKOPÓS - Edificadores Online"
+  },
+  {
+    "id": "2026-febrero",
+    "year": 2026,
+    "month": "Febrero",
+    "monthIndex": 2,
+    "slug": "febrero",
+    "title": "Jehová PEH-LEH",
+    "subtitle": "El Dios Admirable",
+    "heroBlurb": "Buscar a Dios es volver al asombro reverente; vivir como reflejo de lo admirable con humildad, fe obediente y consejo con gracia.",
+    "summary": "¿Cuándo fue la última vez que Dios realmente te asombró? A veces, la rutina, la prisa y el orgullo nos roban la reverencia. En este mensaje, exploramos el nombre de Dios \"Peh-Leh\" (Admirable) y descubrimos que Dios no solo hace maravillas: Él es la Maravilla.",
+    "verseTitle": "La reverencia recupera la dirección.",
+    "verseRef": "Jueces 13:18 (RVR09)",
+    "verseText": "Y el ángel de Jehová respondió: ¿Por qué preguntas por mi nombre, que es admirable?",
+    "application": "Deje de buscar a Dios por curiosidad y empiece a buscarlo por reverencia: el asombro santo no busca entenderlo todo, busca obedecerlo en todo.",
+    "downloads": [
+      {
+        "label": "Descargar Material Didáctico",
+        "url": "https://pub-44f34ebdb92a49c3b40a76dc6f94bf2e.r2.dev/discipulado/2026/febrero/Tema%20refugio%20JEHOVA%20PEH-LEH%20febrero.pdf"
+      },
+      {
+        "label": "Descargar Presentación",
+        "url": "https://pub-44f34ebdb92a49c3b40a76dc6f94bf2e.r2.dev/discipulado/2026/febrero/PPT%20TEMA%202%20REFUGIO%20FEBRERO%20(1).pdf"
+      }
+    ],
+    "videoUrl": "https://www.youtube-nocookie.com/embed/EjP3WgBZV8E?si=TLgoZ8Xg4NMsSvda",
+    "coverImage": "/images/discipulado-covers/febrero.webp",
+    "metaTitle": "Febrero 2026 - Jehová PEH-LEH: El Dios Admirable - Edificadores Online"
+  }
+]
