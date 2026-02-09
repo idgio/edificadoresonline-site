@@ -69,7 +69,7 @@ const entryPath = (slug: string) =>
           <img
             src={coverImage}
             alt={`Portada de ${monthTitle}`}
-            class="h-full w-full object-cover object-top bg-[#f7f1e7]"
+            class="h-full w-full object-cover object-center bg-[#f7f1e7]"
           />
           <div
             class="absolute inset-0 flex items-center justify-center bg-[linear-gradient(180deg,rgba(0,0,0,0)_25%,rgba(0,0,0,0.55)_100%)]"
@@ -94,13 +94,13 @@ const entryPath = (slug: string) =>
       {monthData.entries.map((entry) => (
         <article class="flex flex-col gap-4 md:flex-row md:items-center">
           <div
-            class="w-full md:w-48 h-28 rounded-2xl overflow-hidden bg-white border border-[#efe3d3]"
+            class="w-full md:w-48 h-36 md:h-28 rounded-2xl overflow-hidden bg-white border border-[#efe3d3]"
           >
             {entry.imageUrl ? (
               <img
                 src={entry.imageUrl}
                 alt={entry.title}
-                class="h-full w-full object-contain bg-[#f7f1e7]"
+                class="h-full w-full object-cover object-center bg-[#f7f1e7]"
               />
             ) : (
               <div class="flex h-full items-center justify-center">

@@ -1,7 +1,7 @@
 [
   {
     "month": "Enero",
-    "featured_image_url": "public/images/edificadoresonline_12.webp",
+    "featured_image_url": "public/images/predicas/2026/enero/Portada-Principal-Ene.webp",
     "featured_description": "Comenzar el año reconociendo que Dios no improvisa. Su plan para cada vida tiene un sentido eterno. Buscarle nos alinea con Su propósito y nos libra de vivir sin dirección.",
     "data": [
       {
@@ -45,7 +45,7 @@
         "preacher": "Merice De Osorio",
         "date": "2026-01-04",
         "pdf_url": "https://pub-44f34ebdb92a49c3b40a76dc6f94bf2e.r2.dev/predicas/2026/enero/compressed-las-primicias-que-entregan-los-generosos-de-coraz-on-merice-de-osorio-04-01-2026.pdf",
-        "image_url": null,
+        "image_url": "public/images/predicas/2026/enero/Portada-Primicias.webp",
         "youtube_url": "https://www.youtube.com/watch?v=PaIgRuPuTfM",
         "content": "No basta con dar; la clave está en el corazón desde el cual fluye la dádiva. Esta enseñanza contrasta la \"generosidad\" como un atributo divino frente a la \"mezquindad\", revelando que la prosperidad material está intrínsecamente ligada a la prosperidad del alma.\n\n- **El Filtro Divino:** Cuando Dios pidió materiales para el Tabernáculo (oro, plata, lino, madera), estableció una regla inquebrantable: solo debían traerlos los \"generosos de corazón\". Dios no necesita tus recursos, busca tu actitud.\n- **La Definición:** La generosidad no es un acto esporádico, es un estilo de vida que fluye de alguien que ha experimentado la gracia. Por el contrario, el mezquino carece no solo de generosidad material, sino de misericordia y perdón.\n- **Por qué verla:** Entenderás que la decisión de ser prosperado es tuya. El deseo de Dios es que seas prosperado en todas las cosas (3 Juan 1:2), pero esto ocurre \"así como prospera tu alma\". Tu ofrenda externa es solo un reflejo de tu estado interno."
       },
@@ -75,15 +75,6 @@
         "image_url": "public/images/predicas/2026/enero/enero-servicio-Portada-youtube-serie-josue.webp",
         "youtube_url": "https://www.youtube.com/watch?v=022068zHPgw",
         "content": "¿Estás corriendo con fuerza pero sin rumbo? Esta enseñanza advierte sobre el peligro de vivir como una flecha veloz que no tiene blanco. Dios no improvisa con tu historia; Él es un arquitecto que diseñó el final antes de poner el primer ladrillo.\n\n- **La Garantía:** Basado en Isaías 14:24, la enseñanza establece una seguridad inamovible: \"Ciertamente se hará de la manera que lo he pensado\". Entenderás que lo que a ti te parece demora, para Dios es parte del diseño. Si Dios lo determinó, ninguna circunstancia puede cancelarlo.\n- **El Taller de Ajuste:** La intimidad no es solo para sentir consuelo; es el \"taller\" donde Dios afina tu dirección. En el secreto (Salmo 25:14), Dios no solo te abraza, te alinea y te orienta. El pacto se revela a los que le temen en la intimidad.\n- **La Trampa del Enemigo:** Al enemigo no le importa que estés ocupado, le encanta verte \"corriendo\": siempre cansado, siempre haciendo, pero nunca llegando. El propósito es dejar de correr en círculos y proseguir al blanco del supremo llamamiento.\n- **Por qué verla:** Es el antídoto contra el \"activismo vacío\". Te desafiará a detenerte para calibrar tu brújula en la intimidad, asegurando que tu esfuerzo diario te esté acercando realmente al plan que el Cielo ya aprobó."
-      },
-      {
-        "title": "El Cielo Tiene un Plan",
-        "preacher": "Lupita de Blanco",
-        "date": "2026-01-11",
-        "pdf_url": "https://pub-44f34ebdb92a49c3b40a76dc6f94bf2e.r2.dev/predicas/2026/enero/compressed-dios-de-propositos-predica-domingo-11-enero-700-am.pdf",
-        "image_url": "public/images/predicas/2026/enero/enero-servicio-Portada-youtube-serie-lupita.webp",
-        "youtube_url": null,
-        "content": ""
       },
       {
         "title": "SKOPOS: Dios de Propósito",
@@ -131,20 +122,11 @@
         "content": "Esta enseñanza es el mapa para cuando te sientes perdido en medio de la dificultad. Desglosa magistralmente que el propósito no es un evento instantáneo, sino una serie de estaciones necesarias. Si Dios te dio un sueño grande, prepárate para un proceso grande.\n\n- **El Mapa del Proceso:** Utiliza la vida de José para ilustrar que el camino al trono (el propósito) pasa inevitablemente por:\n- **La Cisterna:** El lugar de la traición y el despojo del ego.\n- **La Casa de Potifar:** La escuela del servicio y la mayordomía en lo ajeno.\n- **La Cárcel:** La prueba de la paciencia y la injusticia, donde aprendes a interpretar los sueños de otros mientras el tuyo parece muerto.\n- **El Palacio:** La plataforma de gobierno para preservar vida.\n- **La Clave:** \"El propósito es mayor que el dolor\". Génesis 50:20 es el ancla: lo que el enemigo diseñó para destruirte, Dios lo usó para capacitarte.\n- **Por qué verla:** Es vital para no abortar el plan cuando las cosas se ponen difíciles. Entenderás que si estás en un \"proceso\", no has sido desechado; estás en construcción. Dios no está improvisando con tu dolor, lo está invirtiendo en tu futuro."
       },
       {
-        "title": "CAFÉ Y ORACIÓN",
-        "preacher": "Lupita de Blanco",
-        "date": "2026-01-21",
-        "pdf_url": "https://pub-44f34ebdb92a49c3b40a76dc6f94bf2e.r2.dev/predicas/2026/enero/compressed-cafe-y-oracion-enero-2026.pdf",
-        "image_url": "public/images/predicas/2026/enero/enero-servicio-Portada-youtube-serie-lupita.webp",
-        "youtube_url": null,
-        "content": ""
-      },
-      {
         "title": "Dios De (Mi) Propósito",
         "preacher": "Fito Vides",
         "date": "2026-01-25",
         "pdf_url": "https://pub-44f34ebdb92a49c3b40a76dc6f94bf2e.r2.dev/predicas/2026/enero/compressed-dios-de-mi-prop-osito-fito-vides-25-01-2026.pdf",
-        "image_url": null,
+        "image_url": "public/images/predicas/2026/enero/Portada-Principal-Ene.webp",
         "youtube_url": "http://youtube.com/watch?v=XEh3hi0uBgI",
         "content": "- **Esta enseñanza cambia el énfasis de lo general a lo personal:** ya no es solo \"Dios de propósitos\", es \"Dios de (mi) propósito\". Nos desafía a dejar de vivir por inercia o reaccionando a las circunstancias, para empezar a vivir bajo un diseño consciente.\n- **El Modelo de David:** Se introduce la figura de David como el ejemplo supremo de alguien que entendió su asignación. Hechos 13:36 nos dice que David \"sirvió a su propia generación según la voluntad de Dios\". Tu propósito tiene fecha de caducidad: es para tu generación y para el \"ahora\".\n- **Identidad vs. Accidente:** No eres un accidente biológico ni el resultado del azar. Antes de que nacieras, ya había un libro escrito sobre ti. El propósito no se inventa, se descubre porque Dios es el autor.\n- **La Condición del Servicio:** El verdadero propósito siempre bendice a otros. Si tu sueño solo te beneficia a ti, es ambición, no propósito. Como Jesús, que no vino a ser servido sino a servir, tu grandeza se mide por tu entrega.\n- **Por qué verla:** Es una llamada a la acción para salir de la pasividad. Aprenderás que el enemigo quiere que vivas distraído para que mueras sin dejar huella, pero Dios te llama a tomar decisiones conscientes (prioridades, tiempo) para marcar tu generación."
       },
@@ -167,5 +149,11 @@
         "content": "- **Previa:** Basada en la vida de Gedeón, esta prédica descifra cómo Dios te ve versus cómo tú te ves. A menudo, el \"código secreto\" llega cuando estás escondido en tu propia \"Ofra\" (lugar de miedo), no cuando te sientes listo.\n- **El Principio:** Dios revela tu identidad antes de cambiar tus circunstancias. Él te llama \"Guerrero Fuerte\" mientras todavía estás escondido sacudiendo trigo.\n- **La Llave:** La autoridad pública nace de la obediencia privada. Antes de vencer a los enemigos de afuera, Dios te pedirá derribar los altares de ídolos que hay \"adentro\" de tu casa.\n- **Por qué verla:** Entenderás que lo que haces hoy para sobrevivir, Dios lo usará mañana para posicionarte. Si te sientes oculto, no estás atrasado, estás en preparación."
       }
     ]
+  },
+  {
+    "month": "Febrero",
+    "featured_image_url": "public/images/predicas/2026/febrero/Portada-Principal-Feb.webp",
+    "featured_description": "Buscar a Dios es reconocer Su soberanía en cada area de la vida. No se trata solo de admirarle, sino de rendirle el control total de nuestras decisiones, emociones y caminos. Cuando entendemos que El gobierna sobre todo, descansamos en Su voluntad y dejamos de luchar por lo que solo Su poder puede ordenar.",
+    "data": []
   }
 ]
