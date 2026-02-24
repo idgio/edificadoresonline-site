@@ -7,6 +7,7 @@ const isHome = normalizedPathname === "/";
 const isDiscipulados = normalizedPathname.startsWith("/discipulados");
 const isDiplomados = normalizedPathname.startsWith("/diplomados");
 const isPredicas = normalizedPathname.startsWith("/predicas");
+const currentYear = new Date().getFullYear();
 const linkClass = (isActive: boolean) =>
   `transition hover:text-[#111111]${isActive ? " text-[#111111]" : ""}`;
 const headerClass = ["flex items-center justify-between gap-6", className]
@@ -29,7 +30,9 @@ const headerClass = ["flex items-center justify-between gap-6", className]
   >
     <a class={linkClass(isHome)} href="/">Inicio</a>
     <a class={linkClass(isDiscipulados)} href="/discipulados">Discipulados</a>
-    <a class={linkClass(isDiplomados)} href="/diplomados">Diplomados</a>
+    <a class={linkClass(isDiplomados)} href={`/diplomados/${currentYear}`}
+      >Diplomados</a
+    >
     <a class={linkClass(isPredicas)} href="/predicas">Prédicas</a>
   </nav>
   <button
