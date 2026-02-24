@@ -1,0 +1,96 @@
+[
+  {
+    "module_id": 1,
+    "title": "Módulo 1",
+    "image_url": "public/images/diplomados/2026/modulo1.webp",
+    "classes": [
+      {
+        "title": "M1C1 Desarrollo de Madurez Espiritual: Introducción.",
+        "youtube_url": "https://www.youtube.com/watch?v=iZQMD1QJLSk"
+      },
+      {
+        "title": "M1C2 Desarrollo de Madurez Espiritual: Clase 2.",
+        "youtube_url": "https://www.youtube.com/watch?v=NDN9tns6ybo"
+      },
+      {
+        "title": "M1C3 Desarrollo de Madurez Espiritual: Clase 3.",
+        "youtube_url": "https://www.youtube.com/watch?v=aTPwStj7HZQ"
+      },
+      {
+        "title": "M1C4 Desarrollo de Madurez Espiritual: Dar desde lo invisible.",
+        "youtube_url": "https://www.youtube.com/watch?v=k8SkF6kDYGY"
+      },
+      {
+        "title": "M1C5 Desarrollo de Madurez Espiritual: Clase 5.",
+        "youtube_url": "https://www.youtube.com/watch?v=tEgMw_tvyJs"
+      },
+      {
+        "title": "M1C6 Desarrollo de Madurez Espiritual: Arrepentimiento, rasgar el corazón, no sólo los vestidos.",
+        "youtube_url": "https://www.youtube.com/watch?v=5ph5FXRXj1Y"
+      },
+      {
+        "title": "M1C7 Desarrollo de Madurez Espiritual: Arrepentimiento, rasgar el corazón, no sólo los vestidos.",
+        "youtube_url": "https://www.youtube.com/watch?v=ORJ8L_8ZsiA"
+      },
+      {
+        "title": "M1C8 Desarrollo de Madurez Espiritual: Discípulo como reflejo del reino.",
+        "youtube_url": "https://www.youtube.com/watch?v=-Bi3Gg6HRD4"
+      },
+      {
+        "title": "M1C9 Desarrollo de Madurez Espiritual: Discípulo como reflejo del reino.",
+        "youtube_url": "https://www.youtube.com/watch?v=w2kIT_9WGmo"
+      },
+      {
+        "title": "M1C10 Desarrollo de Madurez Espiritual: Clase 10.",
+        "youtube_url": "https://www.youtube.com/watch?v=N1TLfiXfXVA"
+      }
+    ]
+  },
+  {
+    "module_id": 2,
+    "title": "Módulo 2",
+    "image_url": "public/images/diplomados/2026/modulo2.webp",
+    "classes": [
+      {
+        "title": "M2C1 Desarollo de Madurez Espiritual: Enfocados en el desarrollo de la madurez espiritual.",
+        "youtube_url": "https://www.youtube.com/watch?v=Wn4SPvq6m8s"
+      },
+      {
+        "title": "M2C2 Desarrollo de Madurez Espiritual: De leche a alimento sólido.",
+        "youtube_url": "https://www.youtube.com/watch?v=cft0Dn4uUOs"
+      },
+      {
+        "title": "M2C3 Desarrollo de Madurez Espiritual: Edificados sobre la roca, la base del discipulado bíblico.",
+        "youtube_url": "https://www.youtube.com/watch?v=gHXPWAquyr0"
+      },
+      {
+        "title": "M2C4 Desarrollo de Madurez Espiritual: Discípulos transformado, renovando mente y corazón.",
+        "youtube_url": "https://www.youtube.com/watch?v=YS4VfEfUxSE"
+      },
+      {
+        "title": "M2C5 Desarrollo de Madurez Espiritual: El costo de ser discípulo de Cristo.",
+        "youtube_url": "https://www.youtube.com/watch?v=3QeLGfsjeko"
+      },
+      {
+        "title": "M2C6 Desarrollo de Madurez Espiritual: Andad en el espíritu, fundamento de vida y crecimiento.",
+        "youtube_url": "https://www.youtube.com/watch?v=lVJvU3cSVmw"
+      },
+      {
+        "title": "M2C7 Desarrollo de Madurez Espiritual: Obediencia práctica, el sello del verdadero discípulo.",
+        "youtube_url": "https://www.youtube.com/watch?v=7h9eFPdYmgI"
+      },
+      {
+        "title": "M2C8 Desarrollo de Madurez Espiritual: De seguidores a hacedores.",
+        "youtube_url": "https://www.youtube.com/watch?v=WGykNsG3q0s"
+      },
+      {
+        "title": "M2C9 Desarrollo de Madurez Espiritual: Multiplicando discípulos, el fruto de la madurez espiritual.",
+        "youtube_url": "https://www.youtube.com/watch?v=QVx-9ptI5q4"
+      },
+      {
+        "title": "M2C10 Desarrollo de Madurez Espiritual: Conociendo y viviendo la palabra, pilar del díscipulo.",
+        "youtube_url": "https://www.youtube.com/watch?v=EBjKMFoIZMg"
+      }
+    ]
+  }
+]

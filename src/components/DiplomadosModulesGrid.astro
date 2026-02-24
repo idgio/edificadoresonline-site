@@ -1,0 +1,51 @@
+---
+import type { DiplomadoModuleEntry } from "@/lib/diplomados";
+
+type Props = {
+  modules: DiplomadoModuleEntry[];
+  year: number;
+};
+
+const { modules, year } = Astro.props as Props;
+---
+
+<section class="mt-10 space-y-4">
+  <div class="flex items-end justify-between gap-4">
+    <div>
+      <p class="text-xs uppercase tracking-[0.18em] text-[#7f7366]">
+        Diplomados {year}
+      </p>
+      <h2
+        class="text-2xl font-bold text-[#1c1c1c]"
+        style="font-family: 'Playfair Display', serif;"
+      >
+        Módulos
+      </h2>
+    </div>
+    <p class="text-xs text-[#6a5f54]">{modules.length} módulos disponibles</p>
+  </div>
+
+  <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+    {modules.map((module) => (
+      <a
+        href={`/diplomados/${year}/${module.routeSegment}`}
+        class="overflow-hidden rounded-[24px] border border-[#e7dccb] bg-white shadow-[0_12px_24px_rgba(17,17,17,0.06)] transition hover:-translate-y-1"
+      >
+        <div class="relative h-44 bg-[#f1e6d5]">
+          {module.imageUrl ? (
+            <img
+              src={module.imageUrl}
+              alt={`Portada ${module.title}`}
+              class="h-full w-full object-cover"
+            />
+          ) : (
+            <div class="flex h-full flex-col items-center justify-center gap-1 text-[#5d5349]">
+              <p class="text-sm font-semibold">Modulo {module.moduleId}</p>
+              <p class="text-xs">{module.classes.length} clases</p>
+            </div>
+          )}
+        </div>
+      </a>
+    ))}
+  </div>
+</section>

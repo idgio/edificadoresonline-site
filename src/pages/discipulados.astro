@@ -9,7 +9,12 @@ const sortedEntries = [...entries].sort((a, b) => {
   return a.monthIndex - b.monthIndex;
 });
 
-const featuredEntry = sortedEntries[sortedEntries.length - 1];
+const currentMonthIndex = new Date().getMonth() + 1;
+const featuredEntry =
+  [...sortedEntries]
+    .reverse()
+    .find((entry) => entry.monthIndex === currentMonthIndex) ??
+  sortedEntries[sortedEntries.length - 1];
 
 const entryPath = (entry: Entry) => `/discipulados/${entry.year}/${entry.slug}`;
 const entryTitle = (entry: Entry) =>
@@ -80,8 +85,8 @@ const featuredMonthLabel = featuredEntry.month.toUpperCase();
                 style={`background-image: url('${entry.coverImage}'); background-size: cover; background-position: center;`}
               >
               </div>
-              <div>
-                <p class="text-sm font-semibold text-[#666] mb-1">
+              <div class="pl-2">
+                <p class="mt-4 text-sm font-semibold text-[#666] mb-1">
                   {entry.month}
                 </p>
                 <h4 class="text-sm font-semibold text-[#1c1c1c] mb-2">
