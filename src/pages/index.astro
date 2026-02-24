@@ -1,229 +1,228 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const currentYear = new Date().getFullYear();
 ---
 
 <BaseLayout title="Edificadores Online">
-        <!-- Hero Section - 3 Column Layout -->
-        <section class="mt-12">
-          <!-- on mobile col should be 100% -->
+  <!-- Hero Section - 3 Column Layout -->
+  <section class="mt-12">
+    <!-- on mobile col should be 100% -->
+    <div
+      class="grid grid-cols-1 lg:grid-cols-[7.5%_85%_7.5%] gap-6 items-center min-h-[400px]"
+    >
+      <!-- Column 1: Left Images -->
+      <!-- hide on mobile -->
+      <div class="space-y-4 hidden lg:block">
+        <!-- Top image - 1:1 aspect ratio -->
+        <div
+          class="aspect-square bg-cover bg-center rounded-2xl"
+          style="background-image: url('images/edificadoresonline_11.webp');"
+        >
+        </div>
+        <!-- Bottom image - 1:2 aspect ratio (tall) -->
+        <div
+          class="aspect-[1/2] bg-cover bg-center rounded-2xl"
+          style="background-image: url('images/edificadoresonline_12.webp');"
+        >
+        </div>
+      </div>
+
+      <!-- Column 2: Center Content -->
+      <div class="text-center space-y-6 px-4">
+        <!-- 3 Images in a row above text -->
+        <div class="flex justify-between items-center mb-6">
           <div
-            class="grid grid-cols-1 lg:grid-cols-[7.5%_85%_7.5%] gap-6 items-center min-h-[400px]"
+            class="aspect-[1/2] bg-cover bg-center rounded-xl h-64 w-20 hidden lg:block"
+            style="background-image: url('images/edificadoresonline_10.webp');"
           >
-            <!-- Column 1: Left Images -->
-            <!-- hide on mobile -->
-            <div class="space-y-4 hidden lg:block">
-              <!-- Top image - 1:1 aspect ratio -->
-              <div
-                class="aspect-square bg-cover bg-center rounded-2xl"
-                style="background-image: url('images/edificadoresonline_11.webp');"
-              >
-              </div>
-              <!-- Bottom image - 1:2 aspect ratio (tall) -->
-              <div
-                class="aspect-[1/2] bg-cover bg-center rounded-2xl"
-                style="background-image: url('images/edificadoresonline_12.webp');"
-              >
-              </div>
-            </div>
-
-            <!-- Column 2: Center Content -->
-            <div class="text-center space-y-6 px-4">
-              <!-- 3 Images in a row above text -->
-              <div class="flex justify-between items-center mb-6">
-                <div
-                  class="aspect-[1/2] bg-cover bg-center rounded-xl h-64 w-20 hidden lg:block"
-                  style="background-image: url('images/edificadoresonline_10.webp');"
-                >
-                </div>
-                <div
-                  class="flex-1 justify-between mx-4 grid grid-cols-3 gap-2 items-start"
-                >
-                  <div
-                    class="aspect-[4/3] bg-cover bg-center rounded-lg"
-                    style="background-image: url('images/edificadoresonline_2.webp');"
-                  >
-                  </div>
-                  <div
-                    class="aspect-[4/3] bg-cover bg-center rounded-lg"
-                    style="background-image: url('images/edificadoresonline_1.webp');"
-                  >
-                  </div>
-                  <div
-                    class="aspect-[4/3] bg-cover bg-center rounded-lg"
-                    style="background-image: url('images/edificadoresonline_9.webp');"
-                  >
-                  </div>
-                </div>
-                <div
-                  class="aspect-[1/2] bg-cover bg-center rounded-xl h-64 w-20 hidden lg:block"
-                  style="background-image: url('images/edificadoresonline_3.webp');"
-                >
-                </div>
-              </div>
-
-              <!-- Text content -->
-              <h1
-                class="text-5xl lg:text-6xl font-bold text-[#1c1c1c]"
-                style="font-family: 'Playfair Display', serif;"
-              >
-                EdificaOnline
-              </h1>
-              <h2 class="text-xl lg:text-2xl font-semibold text-[#2d2d2d]">
-                La Guía Para Tu Crecimiento Espiritual
-              </h2>
-              <p class="text-sm text-[#4a4a4a]">
-                12 meses, 12 mentores y una ruta clara para conocer el carácter
-                de Dios en 2026.
-              </p>
-            </div>
-
-            <!-- Column 3: Right Images -->
-            <div class="space-y-4 hidden lg:block">
-              <!-- Top image - 1:1 aspect ratio -->
-              <div
-                class="aspect-square bg-cover bg-center rounded-2xl"
-                style="background-image: url('images/edificadoresonline_5.webp');"
-              >
-              </div>
-              <!-- Bottom image - 1:2 aspect ratio (tall) -->
-              <div
-                class="aspect-[1/2] bg-cover bg-center rounded-2xl"
-                style="background-image: url('images/edificadoresonline_8.webp');"
-              >
-              </div>
-            </div>
           </div>
-        </section>
-
-        <section class="mt-16 space-y-6">
-          <div class="grid gap-6 lg:grid-cols-[1.4fr_0.6fr]">
-            <div class="relative overflow-hidden rounded-[32px] h-64">
-              <img
-                class="h-full w-full object-cover"
-                src="images/edificadoresonline_6.webp"
-                alt="Discipulados"
-              />
-              <div
-                class="absolute inset-0 flex items-end justify-end bg-[linear-gradient(180deg,rgba(0,0,0,0)_40%,rgba(0,0,0,0.55)_100%)] p-6"
-              >
-                <span class="text-2xl font-semibold text-white"
-                  >Discipulados</span
-                >
-              </div>
-            </div>
-            <div
-              class="flex h-full flex-col justify-between rounded-[28px] bg-[#efe6d8] p-6 text-[#3f3a35]"
-            >
-              <p class="text-sm leading-relaxed">
-                Un tema teológico cada mes con video, presentación y bosquejos
-                descargables.
-              </p>
-              <a
-                href="/discipulados"
-                class="mt-6 flex w-fit items-center gap-2 rounded-full bg-[#1c1c1c] px-4 py-2 text-xs font-semibold text-[#f7f1e7]"
-              >
-                Iniciar
-                <span
-                  class="grid h-5 w-5 place-items-center rounded-full border border-[#f7f1e7]"
-                  >-&gt;</span
-                >
-              </a>
-            </div>
-          </div>
-
           <div
-            class="flex flex-col-reverse gap-6 lg:grid lg:grid-cols-[0.7fr_1.3fr] h-auto lg:h-64"
+            class="flex-1 justify-between mx-4 grid grid-cols-3 gap-2 items-start"
           >
             <div
-              class="flex h-full flex-col justify-between rounded-[28px] bg-[#5b6a4b] p-6 text-[#f4efe6]"
+              class="aspect-[4/3] bg-cover bg-center rounded-lg"
+              style="background-image: url('images/edificadoresonline_2.webp');"
             >
-              <p class="text-sm leading-relaxed">
-                Un tema teológico cada mes con video, presentación y bosquejos
-                descargables.
-              </p>
-              <a
-                href="/diplomados"
-                class="mt-6 flex w-fit items-center gap-2 rounded-full bg-[#1c1c1c] px-4 py-2 text-xs font-semibold text-[#f7f1e7]"
-              >
-                Iniciar
-                <span
-                  class="grid h-5 w-5 place-items-center rounded-full border border-[#f7f1e7]"
-                  >-&gt;</span
-                >
-              </a>
-            </div>
-            <div class="relative overflow-hidden rounded-[32px] h-64">
-              <img
-                class="h-full w-full object-cover"
-                src="images/edificadoresonline_20.webp"
-                alt="Diplomados"
-              />
-              <div
-                class="absolute inset-0 flex items-end justify-end bg-[linear-gradient(180deg,rgba(0,0,0,0)_40%,rgba(0,0,0,0.55)_100%)] p-6"
-              >
-                <span class="text-2xl font-semibold text-white">Diplomados</span
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="grid gap-6 lg:grid-cols-[1.4fr_0.6fr]">
-            <div class="relative overflow-hidden rounded-[32px] h-64">
-              <img
-                class="h-full w-full object-cover"
-                src="images/edificadoresonline_13.webp"
-                alt="Prédicas"
-              />
-              <div
-                class="absolute inset-0 flex items-end justify-end bg-[linear-gradient(180deg,rgba(0,0,0,0)_40%,rgba(0,0,0,0.55)_100%)] p-6"
-              >
-                <span class="text-2xl font-semibold text-white">Prédicas</span>
-              </div>
             </div>
             <div
-              class="flex h-full flex-col justify-between rounded-[28px] bg-[#efe6d8] p-6 text-[#3f3a35]"
+              class="aspect-[4/3] bg-cover bg-center rounded-lg"
+              style="background-image: url('images/edificadoresonline_1.webp');"
             >
-              <p class="text-sm leading-relaxed">
-                Acceso directo a las prédicas de nuestros servicios de 7:00 am,
-                9:00 am y 11:00 am.
-              </p>
-              <a
-                href="/predicas"
-                class="mt-6 flex w-fit items-center gap-2 rounded-full bg-[#1c1c1c] px-4 py-2 text-xs font-semibold text-[#f7f1e7]"
-              >
-                Iniciar
-                <span
-                  class="grid h-5 w-5 place-items-center rounded-full border border-[#f7f1e7]"
-                  >-&gt;</span
-                >
-            </a>
+            </div>
+            <div
+              class="aspect-[4/3] bg-cover bg-center rounded-lg"
+              style="background-image: url('images/edificadoresonline_9.webp');"
+            >
             </div>
           </div>
-        </section>
-
-        <section class="mt-16 space-y-6 text-center">
-          <div class="space-y-2">
-            <h2
-              class="text-3xl font-semibold"
-              style="font-family: 'Playfair Display', serif;"
-            >
-              ADN Edificadores
-            </h2>
-            <p class="mx-auto max-w-2xl text-sm text-[#4a4a4a]">
-              EdificadoresOnline es el brazo de formación de nuestra iglesia,
-              bajo la cobertura de los Pastores Blanco.
-            </p>
+          <div
+            class="aspect-[1/2] bg-cover bg-center rounded-xl h-64 w-20 hidden lg:block"
+            style="background-image: url('images/edificadoresonline_3.webp');"
+          >
           </div>
-          <div class="overflow-hidden rounded-[32px] h-96">
-            <img
-              class="h-full w-full object-cover"
-              src="images/edificadoresonline_14.webp"
-              alt="ADN Edificadores"
-            />
-          </div>
-        </section>
+        </div>
 
-        <!-- <section class="mt-16 space-y-6">
+        <!-- Text content -->
+        <h1
+          class="text-5xl lg:text-6xl font-bold text-[#1c1c1c]"
+          style="font-family: 'Playfair Display', serif;"
+        >
+          EdificaOnline
+        </h1>
+        <h2 class="text-xl lg:text-2xl font-semibold text-[#2d2d2d]">
+          La Guía Para Tu Crecimiento Espiritual
+        </h2>
+        <p class="text-sm text-[#4a4a4a]">
+          12 meses, 12 mentores y una ruta clara para conocer el carácter de
+          Dios en 2026.
+        </p>
+      </div>
+
+      <!-- Column 3: Right Images -->
+      <div class="space-y-4 hidden lg:block">
+        <!-- Top image - 1:1 aspect ratio -->
+        <div
+          class="aspect-square bg-cover bg-center rounded-2xl"
+          style="background-image: url('images/edificadoresonline_5.webp');"
+        >
+        </div>
+        <!-- Bottom image - 1:2 aspect ratio (tall) -->
+        <div
+          class="aspect-[1/2] bg-cover bg-center rounded-2xl"
+          style="background-image: url('images/edificadoresonline_8.webp');"
+        >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-16 space-y-6">
+    <div class="grid gap-6 lg:grid-cols-[1.4fr_0.6fr]">
+      <div class="relative overflow-hidden rounded-[32px] h-64">
+        <img
+          class="h-full w-full object-cover"
+          src="images/edificadoresonline_6.webp"
+          alt="Discipulados"
+        />
+        <div
+          class="absolute inset-0 flex items-end justify-end bg-[linear-gradient(180deg,rgba(0,0,0,0)_40%,rgba(0,0,0,0.55)_100%)] p-6"
+        >
+          <span class="text-2xl font-semibold text-white">Discipulados</span>
+        </div>
+      </div>
+      <div
+        class="flex h-full flex-col justify-between rounded-[28px] bg-[#efe6d8] p-6 text-[#3f3a35]"
+      >
+        <p class="text-sm leading-relaxed">
+          Un tema teológico cada mes con video, presentación y bosquejos
+          descargables.
+        </p>
+        <a
+          href="/discipulados"
+          class="mt-6 flex w-fit items-center gap-2 rounded-full bg-[#1c1c1c] px-4 py-2 text-xs font-semibold text-[#f7f1e7]"
+        >
+          Iniciar
+          <span
+            class="grid h-5 w-5 place-items-center rounded-full border border-[#f7f1e7]"
+            >-&gt;</span
+          >
+        </a>
+      </div>
+    </div>
+
+    <div
+      class="flex flex-col-reverse gap-6 lg:grid lg:grid-cols-[0.7fr_1.3fr] h-auto lg:h-64"
+    >
+      <div
+        class="flex h-full flex-col justify-between rounded-[28px] bg-[#5b6a4b] p-6 text-[#f4efe6]"
+      >
+        <p class="text-sm leading-relaxed">
+          Un tema teológico cada mes con video, presentación y bosquejos
+          descargables.
+        </p>
+        <a
+          href={`/diplomados/${currentYear}`}
+          class="mt-6 flex w-fit items-center gap-2 rounded-full bg-[#1c1c1c] px-4 py-2 text-xs font-semibold text-[#f7f1e7]"
+        >
+          Iniciar
+          <span
+            class="grid h-5 w-5 place-items-center rounded-full border border-[#f7f1e7]"
+            >-&gt;</span
+          >
+        </a>
+      </div>
+      <div class="relative overflow-hidden rounded-[32px] h-64">
+        <img
+          class="h-full w-full object-cover"
+          src="images/edificadoresonline_20.webp"
+          alt="Diplomados"
+        />
+        <div
+          class="absolute inset-0 flex items-end justify-end bg-[linear-gradient(180deg,rgba(0,0,0,0)_40%,rgba(0,0,0,0.55)_100%)] p-6"
+        >
+          <span class="text-2xl font-semibold text-white">Diplomados</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid gap-6 lg:grid-cols-[1.4fr_0.6fr]">
+      <div class="relative overflow-hidden rounded-[32px] h-64">
+        <img
+          class="h-full w-full object-cover"
+          src="images/edificadoresonline_13.webp"
+          alt="Prédicas"
+        />
+        <div
+          class="absolute inset-0 flex items-end justify-end bg-[linear-gradient(180deg,rgba(0,0,0,0)_40%,rgba(0,0,0,0.55)_100%)] p-6"
+        >
+          <span class="text-2xl font-semibold text-white">Prédicas</span>
+        </div>
+      </div>
+      <div
+        class="flex h-full flex-col justify-between rounded-[28px] bg-[#efe6d8] p-6 text-[#3f3a35]"
+      >
+        <p class="text-sm leading-relaxed">
+          Acceso directo a las prédicas de nuestros servicios de 7:00 am, 9:00
+          am y 11:00 am.
+        </p>
+        <a
+          href="/predicas"
+          class="mt-6 flex w-fit items-center gap-2 rounded-full bg-[#1c1c1c] px-4 py-2 text-xs font-semibold text-[#f7f1e7]"
+        >
+          Iniciar
+          <span
+            class="grid h-5 w-5 place-items-center rounded-full border border-[#f7f1e7]"
+            >-&gt;</span
+          >
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-16 space-y-6 text-center">
+    <div class="space-y-2">
+      <h2
+        class="text-3xl font-semibold"
+        style="font-family: 'Playfair Display', serif;"
+      >
+        ADN Edificadores
+      </h2>
+      <p class="mx-auto max-w-2xl text-sm text-[#4a4a4a]">
+        EdificadoresOnline es el brazo de formación de nuestra iglesia, bajo la
+        cobertura de los Pastores Blanco.
+      </p>
+    </div>
+    <div class="overflow-hidden rounded-[32px] h-96">
+      <img
+        class="h-full w-full object-cover"
+        src="images/edificadoresonline_14.webp"
+        alt="ADN Edificadores"
+      />
+    </div>
+  </section>
+
+  <!-- <section class="mt-16 space-y-6">
           <div class="space-y-2">
             <h2 class="text-3xl font-semibold" style="font-family: 'Playfair Display', serif;">
               Nuestra comunidad
