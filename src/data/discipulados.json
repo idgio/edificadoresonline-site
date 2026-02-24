@@ -54,5 +54,26 @@
     "videoUrl": "https://www.youtube-nocookie.com/embed/EjP3WgBZV8E?si=TLgoZ8Xg4NMsSvda",
     "coverImage": "/images/discipulado-covers/febrero.webp",
     "metaTitle": "Febrero 2026 - Jehová PEH-LEH: El Dios Admirable - Edificadores Online"
+  },
+  {
+    "id": "2026-Marzo",
+    "year": 2026,
+    "month": "Marzo",
+    "monthIndex": 3,
+    "slug": "marzo",
+    "title": "Jehová Elohim",
+    "subtitle": "El Dios Creador",
+    "heroBlurb": "¿Sientes que tu vida carece de rumbo o que simplemente existes por impulso? Ser creado por Elohim no es solo una cuestión de identidad; es una misión. Dios no nos diseñó para caminar a la deriva, sino para ser el reflejo de Su carácter en cada detalle de lo cotidiano.",
+    "summary": "¿Sientes que tu vida carece de rumbo o que simplemente existes por impulso? Ser creado por Elohim no es solo una cuestión de identidad; es una misión. Dios no nos diseñó para caminar a la deriva, sino para ser el reflejo de Su carácter en cada detalle de lo cotidiano.\n\n En este estudio, profundizamos en lo que significa llevar la \"Imagen de Dios\".\n Descubriremos que no es un simple adorno, sino un llamado a la responsabilidad: la tarea de gobernar nuestra vida con obediencia, dominio propio y reverencia. \nCuando el alma se siente seca, no se restaura con más ruido o distracciones, sino volviendo al Aliento del Creador que nos sostiene.",
+    "application": "Si Dios es inmutable y no cambia, tu vida no tiene por qué vivir en el caos. Es tiempo de dejar de vivir para uno mismo y empezar a vivir conforme al diseño original.",
+    "downloads": [
+      {
+        "label": "Descargar Material Didáctico",
+        "url": "https://downloads.edificadoresonline.com/discipulado/2026/marzo/temas-de-marzo-docx.pdf"
+      }
+    ],
+    "videoUrl": "https://www.youtube-nocookie.com/embed/l32Te2tVM_0?si=q769ednaOYUGvTLb",
+    "coverImage": "/images/discipulado-covers/marzo.webp",
+    "metaTitle": "Marzo 2026 - El Dios Creador - Edificadores Online"
   }
 ]

@@ -1,0 +1,55 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import DiplomadosModulesGrid from "@/components/DiplomadosModulesGrid.astro";
+import {
+  getActiveDiplomadosYear,
+  getDiplomadoModulesExact,
+  getDiplomadosYears,
+} from "@/lib/diplomados";
+
+export function getStaticPaths() {
+  return getDiplomadosYears().map((year) => ({
+    params: { year: year.toString() },
+  }));
+}
+
+const { year } = Astro.params;
+const yearNumber = Number(year);
+const modules = Number.isFinite(yearNumber)
+  ? getDiplomadoModulesExact(yearNumber)
+  : null;
+
+if (!modules) {
+  throw new Error("Diplomados year not found");
+}
+
+const activeYear = getActiveDiplomadosYear();
+---
+
+<BaseLayout title={`Diplomados ${yearNumber} - Edificadores Online`} headerClass="mb-12">
+  <section class="text-center space-y-4">
+    <p class="text-xs uppercase tracking-[0.22em] text-[#7f7366]">
+      Formación · {yearNumber}
+    </p>
+    <h1
+      class="text-4xl lg:text-5xl font-bold text-[#1c1c1c]"
+      style="font-family: 'Playfair Display', serif;"
+    >
+      Diplomados
+    </h1>
+    <p class="mx-auto max-w-2xl text-sm text-[#4a4a4a]">
+      Selecciona un módulo para ver sus clases
+    </p>
+    {yearNumber !== activeYear && (
+      <a
+        href={`/diplomados/${activeYear}`}
+        class="inline-flex items-center gap-2 rounded-full border border-[#d2c8b8] px-4 py-2 text-xs font-semibold text-[#3f3f3f] transition hover:border-[#111111] hover:text-[#111111]"
+      >
+        Ir al año actual ({activeYear})
+      </a>
+    )}
+  </section>
+
+  <DiplomadosModulesGrid modules={modules} year={yearNumber} />
+</BaseLayout>
+

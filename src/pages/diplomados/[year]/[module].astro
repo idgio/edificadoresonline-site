@@ -1,0 +1,48 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import DiplomadosCatalog from "@/components/DiplomadosCatalog.astro";
+import {
+  findDiplomadoModule,
+  getDiplomadoModulesExact,
+  getDiplomadosYears,
+} from "@/lib/diplomados";
+
+export function getStaticPaths() {
+  return getDiplomadosYears().flatMap((year) => {
+    const modules = getDiplomadoModulesExact(year) ?? [];
+
+    return modules.map((module) => ({
+      params: {
+        year: year.toString(),
+        module: module.routeSegment,
+      },
+    }));
+  });
+}
+
+const { year, module: moduleParam } = Astro.params;
+const yearNumber = Number(year);
+const modules = Number.isFinite(yearNumber)
+  ? getDiplomadoModulesExact(yearNumber)
+  : null;
+
+if (!modules || !moduleParam) {
+  throw new Error("Diplomados module route not found");
+}
+
+const moduleEntry = findDiplomadoModule(yearNumber, moduleParam);
+
+if (!moduleEntry) {
+  throw new Error("Diplomados module not found");
+}
+---
+
+<BaseLayout title={`${moduleEntry.title} ${yearNumber} - Diplomados - Edificadores Online`} headerClass="mb-12">
+  <div class="flex flex-wrap items-center gap-4 text-sm text-[#666]">
+    <a href={`/diplomados/${yearNumber}`} class="hover:text-[#1c1c1c] transition">
+      ← Volver a módulos {yearNumber}
+    </a>
+  </div>
+
+  <DiplomadosCatalog module={moduleEntry} year={yearNumber} />
+</BaseLayout>

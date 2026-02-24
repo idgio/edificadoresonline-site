@@ -4,6 +4,7 @@ const normalizedPathname =
   pathname !== "/" && pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
 const isHome = normalizedPathname === "/";
 const isDiscipulados = normalizedPathname.startsWith("/discipulados");
+const isDiplomados = normalizedPathname.startsWith("/diplomados");
 const isPredicas = normalizedPathname.startsWith("/predicas");
 const linkClass = (isActive: boolean) =>
   `transition hover:text-[#111111]${isActive ? " text-[#111111]" : ""}`;
@@ -32,7 +33,7 @@ const linkClass = (isActive: boolean) =>
   <nav class="flex flex-col gap-6 p-6 text-lg font-semibold text-[#3f3f3f]">
     <a class={linkClass(isHome)} href="/">Inicio</a>
     <a class={linkClass(isDiscipulados)} href="/discipulados">Discipulados</a>
-    <a class="transition hover:text-[#111111]" href="#">Diplomados</a>
+    <a class={linkClass(isDiplomados)} href="/diplomados">Diplomados</a>
     <a class={linkClass(isPredicas)} href="/predicas">Prédicas</a>
   </nav>
 </div>
