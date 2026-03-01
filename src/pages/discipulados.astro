@@ -9,12 +9,16 @@ const sortedEntries = [...entries].sort((a, b) => {
   return a.monthIndex - b.monthIndex;
 });
 
+// Server-side fallback: use the latest entry by default
 const currentMonthIndex = new Date().getMonth() + 1;
-const featuredEntry =
+const serverFeaturedEntry =
   [...sortedEntries]
     .reverse()
     .find((entry) => entry.monthIndex === currentMonthIndex) ??
   sortedEntries[sortedEntries.length - 1];
+
+// This will be updated client-side if different from current month
+const featuredEntry = serverFeaturedEntry;
 
 const entryPath = (entry: Entry) => `/discipulados/${entry.year}/${entry.slug}`;
 const entryTitle = (entry: Entry) =>
@@ -28,15 +32,16 @@ const featuredMonthLabel = featuredEntry.month.toUpperCase();
     <div class="grid gap-8 lg:grid-cols-[1fr_400px] items-center">
       <!-- Left - Main Image -->
       <div
+        data-hero-image
         class="relative overflow-hidden rounded-3xl h-80 bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center h-200"
         style={`background-image: url('${featuredEntry.coverImage}'); background-size: cover; background-position: center;`}
       >
       </div>
 
       <!-- Right - Content -->
-      <div class="space-y-6">
+      <div class="space-y-6" data-hero-content>
         <div>
-          <p class="text-sm font-semibold text-[#666] mb-2">
+          <p class="text-sm font-semibold text-[#666] mb-2" data-month-label>
             {featuredMonthLabel}
           </p>
           <h2
@@ -45,14 +50,18 @@ const featuredMonthLabel = featuredEntry.month.toUpperCase();
           >
             Discipulados
           </h2>
-          <h3 class="text-xl font-semibold text-[#2d2d2d] mb-4">
+          <h3
+            class="text-xl font-semibold text-[#2d2d2d] mb-4"
+            data-featured-title
+          >
             {entryTitle(featuredEntry)}
           </h3>
-          <p class="text-sm text-[#4a4a4a] leading-relaxed">
+          <p class="text-sm text-[#4a4a4a] leading-relaxed" data-featured-blurb>
             {featuredEntry.heroBlurb ?? featuredEntry.summary}
           </p>
         </div>
         <a
+          data-featured-link
           href={entryPath(featuredEntry)}
           class="flex items-center gap-2 rounded-full bg-[#1c1c1c] px-6 py-3 text-sm font-semibold text-[#f7f1e7] transition hover:bg-[#0f0f0f] max-w-32"
         >
@@ -77,30 +86,78 @@ const featuredMonthLabel = featuredEntry.month.toUpperCase();
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {sortedEntries.map((entry) => (
-          <div class="space-y-4">
-            <a href={entryPath(entry)} class="block">
-              <div
-                class="relative overflow-hidden rounded-2xl h-48 bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center hover:scale-105 transition-transform cursor-pointer h-40"
-                style={`background-image: url('${entry.coverImage}'); background-size: cover; background-position: center;`}
-              >
-              </div>
-              <div class="pl-2">
-                <p class="mt-4 text-sm font-semibold text-[#666] mb-1">
-                  {entry.month}
-                </p>
-                <h4 class="text-sm font-semibold text-[#1c1c1c] mb-2">
-                  {entryTitle(entry)}
-                </h4>
-                <span
-                  class="text-xs text-[#666] hover:text-[#1c1c1c] underline"
-                  >Ver más...</span
-                >
-              </div>
-            </a>
-          </div>
-        ))}
+        {
+          sortedEntries.map((entry) => (
+            <div class="space-y-4">
+              <a href={entryPath(entry)} class="block">
+                <div
+                  class="relative overflow-hidden rounded-2xl h-48 bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center hover:scale-105 transition-transform cursor-pointer h-40"
+                  style={`background-image: url('${entry.coverImage}'); background-size: cover; background-position: center;`}
+                ></div>
+                <div class="pl-2">
+                  <p class="mt-4 text-sm font-semibold text-[#666] mb-1">
+                    {entry.month}
+                  </p>
+                  <h4 class="text-sm font-semibold text-[#1c1c1c] mb-2">
+                    {entryTitle(entry)}
+                  </h4>
+                  <span class="text-xs text-[#666] hover:text-[#1c1c1c] underline">
+                    Ver más...
+                  </span>
+                </div>
+              </a>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
 </BaseLayout>
+
+<script define:vars={{ sortedEntries, serverFeaturedEntry }}>
+  // Client-side check to update featured entry if month has changed since build
+  function updateFeaturedEntry() {
+    const currentMonthIndex = new Date().getMonth() + 1;
+    const serverMonthIndex = serverFeaturedEntry.monthIndex;
+
+    // Only update if the server's featured entry is not for the current month
+    if (currentMonthIndex !== serverMonthIndex) {
+      // Find entry for current month
+      const currentMonthEntry = [...sortedEntries]
+        .reverse()
+        .find((entry) => entry.monthIndex === currentMonthIndex);
+
+      if (currentMonthEntry) {
+        // Update the hero section with current month's content
+        const heroSection = document.querySelector("[data-hero-content]");
+        const monthLabel = document.querySelector("[data-month-label]");
+        const title = document.querySelector("[data-featured-title]");
+        const blurb = document.querySelector("[data-featured-blurb]");
+        const link = document.querySelector("[data-featured-link]");
+        const heroImage = document.querySelector("[data-hero-image]");
+
+        if (monthLabel)
+          monthLabel.textContent = currentMonthEntry.month.toUpperCase();
+        if (title)
+          title.textContent = currentMonthEntry.subtitle
+            ? `${currentMonthEntry.title}: ${currentMonthEntry.subtitle}`
+            : currentMonthEntry.title;
+        if (blurb)
+          blurb.textContent =
+            currentMonthEntry.heroBlurb ?? currentMonthEntry.summary;
+        if (link)
+          link.href = `/discipulados/${currentMonthEntry.year}/${currentMonthEntry.slug}`;
+        if (heroImage) {
+          heroImage.style.backgroundImage = `url('${currentMonthEntry.coverImage}')`;
+        }
+      }
+    }
+  }
+
+  // Run when DOM is loaded
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", updateFeaturedEntry);
+  } else {
+    updateFeaturedEntry();
+  }
+</script>
