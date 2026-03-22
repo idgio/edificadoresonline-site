@@ -3,6 +3,7 @@ import diplomados2026 from "@/data/diplomados/2026/diplomados_2026.json";
 export type DiplomadoClass = {
   title: string;
   youtube_url: string;
+  pdf_url?: string;
 };
 
 export type DiplomadoModule = {

@@ -55,28 +55,38 @@ const { module, year } = Astro.props as Props;
           {
             module.classes.map((classItem) => (
               <li class="rounded-2xl border border-[#efe3d3] bg-[#fcfaf6] p-4">
-                <button
-                  type="button"
-                  class="block w-full rounded-lg text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1c1c1c]/40"
-                  data-modal-open
-                  data-video-title={classItem.title}
-                  data-video-youtube={classItem.youtube_url}
-                  data-video-embed={classItem.embedUrl ?? ""}
-                >
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="min-w-0 space-y-1">
-                      <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#7b6d61]">
-                        {classItem.label}
-                      </p>
-                      <p class="text-sm leading-relaxed text-[#2d2d2d] underline-offset-4 hover:underline">
-                        {classItem.displayTitle}
-                      </p>
-                    </div>
-                    <span class="shrink-0 rounded-full bg-[#1c1c1c] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#f7f1e7]">
-                      Ver video
-                    </span>
+                <div class="flex items-start justify-between gap-3">
+                  <div class="min-w-0 space-y-1">
+                    <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#7b6d61]">
+                      {classItem.label}
+                    </p>
+                    <p class="text-sm leading-relaxed text-[#2d2d2d]">
+                      {classItem.displayTitle}
+                    </p>
                   </div>
-                </button>
+                  <div class="shrink-0 flex flex-col gap-2">
+                    <button
+                      type="button"
+                      class="rounded-full bg-[#1c1c1c] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#f7f1e7] hover:bg-[#0f0f0f] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1c1c1c]/40"
+                      data-modal-open
+                      data-video-title={classItem.title}
+                      data-video-youtube={classItem.youtube_url}
+                      data-video-embed={classItem.embedUrl ?? ""}
+                    >
+                      Ver video
+                    </button>
+                    {classItem.pdf_url && (
+                      <button
+                        type="button"
+                        class="rounded-full bg-[#7b6d61] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#f7f1e7] hover:bg-[#6a5f54] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7b6d61]/40"
+                        data-pdf-url={classItem.pdf_url}
+                        data-pdf-open
+                      >
+                        Ver PDF
+                      </button>
+                    )}
+                  </div>
+                </div>
               </li>
             ))
           }
@@ -161,6 +171,8 @@ const { module, year } = Astro.props as Props;
     modal?.querySelectorAll<HTMLElement>("[data-modal-close]") ?? [];
   const openButtons =
     document.querySelectorAll<HTMLElement>("[data-modal-open]");
+  const pdfButtons = 
+    document.querySelectorAll<HTMLElement>("[data-pdf-open]");
 
   let lastFocusedElement: HTMLElement | null = null;
 
@@ -187,6 +199,13 @@ const { module, year } = Astro.props as Props;
     setModalOpen(true);
   };
 
+  const openPdf = (button: HTMLElement) => {
+    const pdfUrl = button.getAttribute("data-pdf-url");
+    if (pdfUrl) {
+      window.open(pdfUrl, "_blank", "noopener,noreferrer");
+    }
+  };
+
   const closeModal = () => {
     setModalOpen(false);
     lastFocusedElement?.focus();
@@ -194,6 +213,10 @@ const { module, year } = Astro.props as Props;
 
   openButtons.forEach((button) => {
     button.addEventListener("click", () => openModal(button));
+  });
+
+  pdfButtons.forEach((button) => {
+    button.addEventListener("click", () => openPdf(button));
   });
 
   closeButtons.forEach((button) => {
