@@ -36,7 +36,7 @@ const { module, year } = Astro.props as Props;
             alt={`Portada ${module.title}`}
             class="h-full w-full object-cover"
           />
-          <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_38%,rgba(0,0,0,0.55)_100%)]"></div>
+          <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_38%,rgba(0,0,0,0.55)_100%)]" />
         </div>
       </div>
     )
@@ -171,8 +171,7 @@ const { module, year } = Astro.props as Props;
     modal?.querySelectorAll<HTMLElement>("[data-modal-close]") ?? [];
   const openButtons =
     document.querySelectorAll<HTMLElement>("[data-modal-open]");
-  const pdfButtons = 
-    document.querySelectorAll<HTMLElement>("[data-pdf-open]");
+  const pdfButtons = document.querySelectorAll<HTMLElement>("[data-pdf-open]");
 
   let lastFocusedElement: HTMLElement | null = null;
 
