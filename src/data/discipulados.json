@@ -79,5 +79,29 @@
     "videoUrl": "https://www.youtube-nocookie.com/embed/l32Te2tVM_0?si=q769ednaOYUGvTLb",
     "coverImage": "/images/discipulado-covers/marzo.webp",
     "metaTitle": "Marzo 2026 - El Dios Creador - Edificadores Online"
+  },
+  {
+    "id": "2026-Abril",
+    "year": 2026,
+    "month": "Abril",
+    "monthIndex": 4,
+    "slug": "abril",
+    "title": "Jehová Khah-ee",
+    "subtitle": "El Dios Vivo",
+    "heroBlurb": "¿Cuándo fue la última vez que sentiste que tu fe dejó de ser una rutina para convertirse en una fuerza real?",
+    "summary": "A veces, el activismo y la costumbre nos enfrían el alma. En este mensaje, exploramos el nombre de Dios \"Jehová Khah-ee\" (El Dios Vivo) y descubrimos que Él no es un concepto del pasado, sino una Persona presente que sostiene nuestra vida.",
+    "application": "Deje de tratar a Dios como una teoría y empiece a reconocerlo como su Rey presente: la fe en el Dios Vivo no se queda en un discurso, se traduce en una obediencia que transforma cada decisión de su semana",
+    "verseTitle": "La permanencia activa la vida",
+    "verseRef": "Jeremías 10:10 (RV1909)",
+    "verseText": "Mas Jehová es el Dios verdadero; Él es Dios vivo y Rey eterno...",
+    "downloads": [
+      {
+        "label": "Descargar Material Didáctico",
+        "url": "https://downloads.edificadoresonline.com/discipulado/2026/abril/temas-de-abril.pdf"
+      }
+    ],
+    "videoUrl": "https://www.youtube-nocookie.com/embed//LL5rC-ujx3E?si=qkRLduaXUfKX-RnO",
+    "coverImage": "/images/discipulado-covers/abril.webp",
+    "metaTitle": "Abril 2026 - El Dios Vivo - Edificadores Online"
   }
 ]
