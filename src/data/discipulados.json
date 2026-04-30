@@ -107,5 +107,33 @@
     "videoUrl": "https://www.youtube-nocookie.com/embed//LL5rC-ujx3E?si=qkRLduaXUfKX-RnO",
     "coverImage": "/images/discipulado-covers/abril.webp",
     "metaTitle": "Abril 2026 - El Dios Vivo - Edificadores Online"
+  },
+  {
+    "id": "2026-mayo",
+    "year": 2026,
+    "month": "Mayo",
+    "monthIndex": 5,
+    "slug": "mayo",
+    "title": "Jehová Chokmah",
+    "subtitle": "El Dios de Sabiduría",
+    "heroBlurb": "¿Sientes que tus decisiones te llevan a callejones sin salida o que simplemente actúas por impulso? Conocer a Jehová Chokmah no es solo una cuestión de intelecto; es una dirección de vida.",
+    "summary": "¿Sientes que tus decisiones te llevan a callejones sin salida o que simplemente actúas por impulso? Conocer a Jehová Chokmah no es solo una cuestión de intelecto; es una dirección de vida. Dios no nos llamó a caminar apoyados en nuestra propia prudencia, sino a tomar decisiones limpias que reflejan Su carácter pacífico y puro en lo cotidiano.\n\nEn este estudio, profundizamos en lo que significa vivir con la \"Sabiduría de lo Alto\". Descubriremos que no es simplemente acumular conocimiento o tener la razón, sino un llamado a la madurez espiritual: la tarea de gobernar nuestros pasos pidiendo consejo, siendo enseñables y rindiendo nuestro orgullo. Cuando la mente se siente abrumada o confundida, no se aclara con más prisa o terquedad, sino volviendo a la Palabra que es lámpara y lumbrera para nuestro camino.",
+    "verseTitle": "La sabiduría divina guía nuestros pasos.",
+    "verseRef": "Proverbios 3:5-6 (RVR09)",
+    "verseText": "Fíate de Jehová de todo tu corazón, y no te apoyes en tu propia prudencia. Reconócelo en todos tus caminos, y él enderezará tus veredas.",
+    "application": "Si Jehová es la fuente inagotable de sabiduría e inteligencia, tus caminos no tienen porqué estar torcidos ni gobernados por la intuición. Es tiempo de dejar de decidir en base a la presión del momento y empezar a caminar bajo el consejo divino.",
+    "downloads": [
+      {
+        "label": "Descargar Material Didáctico",
+        "url": "https://downloads.edificadoresonline.com/discipulado/2026/mayo/temas-de-mayo.pdf"
+      },
+      {
+        "label": "Descargar Presentación",
+        "url": "https://downloads.edificadoresonline.com/discipulado/2026/mayo/tema-1-refugio-mayo.pdf"
+      }
+    ],
+    "videoUrl": "https://www.youtube-nocookie.com/embed/a1mzZKpEXjA?si=wZ1xCZE5f5_G1lEY",
+    "coverImage": "/images/discipulado-covers/mayo.webp",
+    "metaTitle": "Mayo 2026 - El Dios de Sabiduría - Edificadores Online"
   }
 ]
