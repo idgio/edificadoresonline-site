@@ -135,5 +135,30 @@
     "videoUrl": "https://www.youtube-nocookie.com/embed/a1mzZKpEXjA?si=wZ1xCZE5f5_G1lEY",
     "coverImage": "/images/discipulado-covers/mayo.webp",
     "metaTitle": "Mayo 2026 - El Dios de Sabiduría - Edificadores Online"
+  },
+  {
+    "id": "2026-junio",
+    "year": 2026,
+    "month": "Junio",
+    "monthIndex": 6,
+    "slug": "junio",
+    "title": "Jehová Raáh",
+    "subtitle": "El Dios Pastor.",
+    "heroBlurb": "¿Sientes que vas por la vida solo sobreviviendo o que el cansancio y la ansiedad ahogan tu caminar? Conocer a Jehová Raáh no es solo saber que Él nos consuela; es una dirección de vida.",
+    "summary": "¿Sientes que vas por la vida solo sobreviviendo o que el cansancio y la ansiedad ahogan tu caminar? Conocer a Jehová Raáh no es solo saber que Él nos consuela; es una dirección de vida. Dios no nos llamó a caminar apoyados en nuestra propia autosuficiencia ni a vivir bajo una mentalidad de escasez, sino a ser guiados con integridad para encontrar verdadero descanso, provisión y seguridad en lo cotidiano.\nEn este estudio, profundizamos en lo que significa vivir bajo el cuidado del \"Dios Pastor\". Descubriremos que la restauración no es simplemente una emoción pasajera, sino un llamado a reordenar el camino: la tarea de rendir el control, afinar nuestro oído espiritual para reconocer Su voz por encima del ruido, y dejarnos guiar por sendas de justicia. Cuando el alma se siente desordenada o atraviesa valles oscuros, no se aquieta huyendo ni controlando todo, sino recordando que la vara y el cayado del Pastor nos infunden aliento y acompañamiento.",
+    "application": "Si Jehová es el buen pastor que da su vida por las ovejas, tus caminos no tienen porqué estar gobernados por el miedo o la sensación constante de que algo te falta. Es tiempo de dejar de caminar a la deriva intentando salvarte a ti mismo, y empezar a seguir Su voz para que incluso los procesos más difíciles se transformen en propósito.",
+    "downloads": [
+      {
+        "label": "Descargar Material Didáctico",
+        "url": "https://downloads.edificadoresonline.com/discipulado/2026/junio/temas-de-junio.pdf"
+      },
+      {
+        "label": "Descargar Presentación",
+        "url": "https://downloads.edificadoresonline.com/discipulado/2026/junio/tema-1-refugio-junio.pdf"
+      }
+    ],
+    "videoUrl": "https://www.youtube-nocookie.com/embed/PHErCPBafec",
+    "coverImage": "/images/discipulado-covers/junio.webp",
+    "metaTitle": "Junio 2026 - Jehová Raáh: El Dios Pastor - Edificadores Online"
   }
 ]

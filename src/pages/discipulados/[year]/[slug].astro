@@ -53,13 +53,17 @@ const pageTitle =
         <div class="space-y-4 text-[#4a4a4a] leading-relaxed">
           <p class="text-base whitespace-pre-line">{entry.summary}</p>
 
-          <div>
-            <p class="font-semibold text-[#2d2d2d] mb-2">
-              {entry.verseTitle}
-            </p>
-            <p class="text-sm italic mb-2">{entry.verseRef}</p>
-            <p class="text-sm">{entry.verseText}</p>
-          </div>
+          {
+            entry.verseTitle && entry.verseRef && entry.verseText && (
+              <div>
+                <p class="font-semibold text-[#2d2d2d] mb-2">
+                  {entry.verseTitle}
+                </p>
+                <p class="text-sm italic mb-2">{entry.verseRef}</p>
+                <p class="text-sm">{entry.verseText}</p>
+              </div>
+            )
+          }
 
           <div>
             <p class="font-semibold text-[#2d2d2d] mb-2">Aplicación:</p>
@@ -69,26 +73,29 @@ const pageTitle =
 
         <!-- Download Buttons -->
         <div class="flex flex-col gap-3">
-          {entry.downloads.map((download) => (
-            <a
-              href={download.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="flex items-center gap-2 rounded-full bg-[#1c1c1c] px-6 py-3 text-sm font-semibold text-[#f7f1e7] transition hover:bg-[#0f0f0f] w-fit"
-            >
-              {download.label}
-              <span
-                class="grid h-5 w-5 place-items-center rounded-full border border-[#f7f1e7]"
-                >→</span
+          {
+            entry.downloads.map((download) => (
+              <a
+                href={download.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-2 rounded-full bg-[#1c1c1c] px-6 py-3 text-sm font-semibold text-[#f7f1e7] transition hover:bg-[#0f0f0f] w-fit"
               >
-            </a>
-          ))}
+                {download.label}
+                <span class="grid h-5 w-5 place-items-center rounded-full border border-[#f7f1e7]">
+                  →
+                </span>
+              </a>
+            ))
+          }
         </div>
       </div>
 
       <!-- Right Side - Video -->
       <div class="space-y-4">
-        <div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-gray-900">
+        <div
+          class="relative w-full aspect-video rounded-2xl overflow-hidden bg-gray-900"
+        >
           <iframe
             class="w-full h-full"
             src={entry.videoUrl}
@@ -96,8 +103,7 @@ const pageTitle =
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
+            allowfullscreen></iframe>
         </div>
       </div>
     </div>
