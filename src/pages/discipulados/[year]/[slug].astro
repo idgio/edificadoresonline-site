@@ -2,7 +2,10 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import entries from "@/data/discipulados.json";
 
-type Entry = (typeof entries)[number];
+type Entry = (typeof entries)[number] & {
+  spotifyPlaylistUrl?: string;
+  youtubePlaylistUrl?: string;
+};
 
 export function getStaticPaths() {
   return entries.map((entry) => ({
@@ -69,6 +72,54 @@ const pageTitle =
             <p class="font-semibold text-[#2d2d2d] mb-2">Aplicación:</p>
             <p class="text-sm">{entry.application}</p>
           </div>
+
+          {
+            (entry.spotifyPlaylistUrl || entry.youtubePlaylistUrl) && (
+              <div>
+                <p class="font-semibold text-[#2d2d2d] mb-2">Playlists:</p>
+                <div class="flex flex-wrap gap-2">
+                  {entry.spotifyPlaylistUrl && (
+                    <a
+                      href={entry.spotifyPlaylistUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-2 rounded-full bg-[#1DB954] px-4 py-2 text-xs font-semibold text-[#0b0b0b] shadow-sm transition hover:bg-[#1ed760] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1DB954] focus-visible:ring-offset-2"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="h-4 w-4"
+                        aria-hidden="true"
+                      >
+                        <path d="M12 1.5C6.201 1.5 1.5 6.201 1.5 12S6.201 22.5 12 22.5 22.5 17.799 22.5 12 17.799 1.5 12 1.5Zm4.86 15.12a.75.75 0 0 1-1.032.246c-2.826-1.728-6.39-2.121-10.602-1.173a.75.75 0 1 1-.33-1.464c4.602-1.038 8.544-.591 11.715 1.35a.75.75 0 0 1 .249 1.041Zm1.476-3.282a.938.938 0 0 1-1.29.303c-3.234-1.989-8.163-2.565-11.985-1.398a.937.937 0 1 1-.549-1.792c4.368-1.335 9.807-.687 13.518 1.593a.937.937 0 0 1 .306 1.294Zm.126-3.42C14.565 7.604 8.133 7.39 4.413 8.515a1.125 1.125 0 0 1-.651-2.154c4.272-1.293 11.373-1.044 15.879 1.632a1.125 1.125 0 1 1-1.179 1.926Z" />
+                      </svg>
+                      Spotify Playlist
+                    </a>
+                  )}
+                  {entry.youtubePlaylistUrl && (
+                    <a
+                      href={entry.youtubePlaylistUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-2 rounded-full bg-[#FF0033] px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-[#d9002b] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF0033] focus-visible:ring-offset-2"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="h-4 w-4"
+                        aria-hidden="true"
+                      >
+                        <path d="M23.5 12s0-3.092-.392-4.579a3.003 3.003 0 0 0-2.129-2.129C19.492 4.9 12 4.9 12 4.9s-7.492 0-8.979.392A3.003 3.003 0 0 0 .892 7.42C.5 8.908.5 12 .5 12s0 3.092.392 4.579a3.003 3.003 0 0 0 2.129 2.129C4.508 19.1 12 19.1 12 19.1s7.492 0 8.979-.392a3.003 3.003 0 0 0 2.129-2.129C23.5 15.092 23.5 12 23.5 12ZM9.6 15.75v-7.5L16.1 12 9.6 15.75Z" />
+                      </svg>
+                      YouTube Playlist
+                    </a>
+                  )}
+                </div>
+              </div>
+            )
+          }
         </div>
 
         <!-- Download Buttons -->
