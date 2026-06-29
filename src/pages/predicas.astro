@@ -76,7 +76,7 @@ const introCopy =
         const cover = normalizeImageUrl(month.coverImage ?? null);
         const description = month.featuredDescription
           ? getExcerpt(month.featuredDescription, 140)
-          : month.entries[0]
+          : month.entries[0]?.content
             ? getExcerpt(month.entries[0].content)
             : "Descripción breve.";
 

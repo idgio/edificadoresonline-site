@@ -45,7 +45,7 @@ const renderInline = (text: string) =>
 const normalizeListLine = (line: string) =>
   line.trim().replace(/^[-•]\s*/, "");
 
-const contentBlocks = entry.content
+const contentBlocks = (entry.content ?? "")
   .split("\n\n")
   .map((block) => block.trim())
   .filter(Boolean)

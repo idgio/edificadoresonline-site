@@ -117,9 +117,11 @@ const entryPath = (slug: string) =>
             <p class="text-xs text-[#6a5f54]">
               {entry.preacher} · {formatDate(entry.date)}
             </p>
-            <p class="text-xs text-[#6a5f54]">
-              {getExcerpt(entry.content)}
-            </p>
+            {entry.content && (
+              <p class="text-xs text-[#6a5f54]">
+                {getExcerpt(entry.content)}
+              </p>
+            )}
             <div class="flex flex-wrap gap-3 text-xs text-[#6a5f54]">
               <a href={entryPath(entry.slug)} class="underline">Ver más...</a>
               {entry.pdf_url && (

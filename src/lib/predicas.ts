@@ -7,7 +7,7 @@ export type Predica = {
   pdf_url: string | null;
   image_url: string | null;
   youtube_url: string | null;
-  content: string;
+  content?: string;
 };
 
 export type PredicaMonth = {
@@ -81,7 +81,15 @@ const normalizePredicaEntry = (predica: Predica): PredicaEntry => ({
 });
 
 export const normalizeMonth = (month: PredicaMonth): PredicaMonthNormalized => {
-  const entries = month.data.map(normalizePredicaEntry);
+  const seenSlugs = new Set<string>();
+  const entries = month.data.map((predica) => {
+    const entry = normalizePredicaEntry(predica);
+    if (seenSlugs.has(entry.slug)) {
+      entry.slug = slugify(`${predica.title}-${predica.preacher}-${predica.date}`);
+    }
+    seenSlugs.add(entry.slug);
+    return entry;
+  });
   const featuredImage = normalizeImageUrl(month.featured_image_url ?? null);
   const coverImage =
     featuredImage ?? entries[0]?.imageUrl ?? DEFAULT_IMAGE;
