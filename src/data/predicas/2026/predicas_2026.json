@@ -552,5 +552,124 @@
         "youtube_url": "https://www.youtube.com/watch?v=kP5vaM3gOSU"
       }
     ]
+  },
+  {
+    "month": "Junio",
+    "featured_image_url": "public/images/discipulado-covers/junio.webp",
+    "featured_description": "Jehová Raah: Dios se revela como Pastor que guía, cuida, restaura y sale a buscar a los suyos. En Su pastoreo encontramos dirección, reposo, vigilancia y fruto para vivir confiados bajo Su cuidado.",
+    "data": [
+      {
+        "title": "Sabios para lo que viene",
+        "preacher": "Josué Blanco",
+        "date": "2026-06-01",
+        "pdf_url": null,
+        "image_url": "public/images/predicas/2026/junio/portada-youtube-03-josue.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=Lh6V55pw2Sg"
+      },
+      {
+        "title": "Jehová Raáh el Dios que nos pastorea, cuida y restaura",
+        "preacher": "José Luis Blanco",
+        "date": "2026-06-04",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/junio/jehova-raah-parte-1.pdf",
+        "image_url": "public/images/predicas/2026/junio/portada-youtube-02-jose.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=264Wzo9GAPQ"
+      },
+      {
+        "title": "Jehová Raáh, Jehová es mi pastor",
+        "preacher": "Lupita de Blanco",
+        "date": "2026-06-07",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/junio/serie-jehova-es-mi-pastor-dom-07-junio-700-am.pdf",
+        "image_url": "public/images/predicas/2026/junio/portada-youtube-01-lupita.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=t5dBkZA6CdA"
+      },
+      {
+        "title": "Jehová Raáh Dios es nuestro pastor",
+        "preacher": "José Luis Blanco",
+        "date": "2026-06-07",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/junio/07-de-junio-jehova-raah-dios-es-nuestro-pastor.pdf",
+        "image_url": "public/images/predicas/2026/junio/portada-youtube-02-jose.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=8elBPBIOOIE"
+      },
+      {
+        "title": "Jehová Raáh Dios es nuestro pastor",
+        "preacher": "Josué Blanco",
+        "date": "2026-06-07",
+        "pdf_url": null,
+        "image_url": "public/images/predicas/2026/junio/portada-youtube-03-josue.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=XnCmEBXEiZE"
+      },
+      {
+        "title": "Jehová Raáh, Jehová es mi pastor",
+        "preacher": "Lupita de Blanco",
+        "date": "2026-06-14",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/junio/serie-jehova-es-mi-pastor-dom-14-junio-700-am.pdf",
+        "image_url": "public/images/predicas/2026/junio/portada-youtube-01-lupita.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=Sv1x_-1Otk4"
+      },
+      {
+        "title": "Jehová Raáh, Jehová es mi pastor",
+        "preacher": "José Luis Blanco",
+        "date": "2026-06-14",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/junio/dom-14-de-junio-jehova-raah-dios-es-mi-pastor.pdf",
+        "image_url": "public/images/predicas/2026/junio/portada-youtube-02-jose.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=bdgxMXbl8W0"
+      },
+      {
+        "title": "Jehová Raáh: Junto a aguas de reposo",
+        "preacher": "Josué Blanco",
+        "date": "2026-06-14",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/junio/junto-a-aguas-de-reposo.pdf",
+        "image_url": "public/images/predicas/2026/junio/portada-youtube-03-josue.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=av5OTgQYOXo"
+      },
+      {
+        "title": "Jehová Raáh: Un pastoreo continuo, integral y productivo",
+        "preacher": "Mery Osorio",
+        "date": "2026-06-21",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/junio/un-pastoreo-continuo-integral-y-productivo.pdf",
+        "image_url": "public/images/predicas/2026/junio/portada-youtube-05.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=wrkTkSnQuFg"
+      },
+      {
+        "title": "El Padre Pastor Vigilante de su rebaño",
+        "preacher": "José Luis Blanco",
+        "date": "2026-06-21",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/junio/dom-22-de-junio-el-padre-pastor-vigilante-de-su-rebano-9-am.pdf",
+        "image_url": "public/images/predicas/2026/junio/portada-youtube-02-jose.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=4HKpijl1wf4"
+      },
+      {
+        "title": "Jehová Raáh, Dios sale a buscarte",
+        "preacher": "Josué Blanco",
+        "date": "2026-06-21",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/junio/dios-sale-a-buscarte.pdf",
+        "image_url": "public/images/predicas/2026/junio/portada-youtube-03-josue.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=Wq2tEPyjs84"
+      },
+      {
+        "title": "El Espíritu Santo, la presencia pastoral de Jesús",
+        "preacher": "Fito Vides",
+        "date": "2026-06-28",
+        "pdf_url": null,
+        "image_url": "public/images/predicas/2026/junio/portada-youtube-04-fito.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=JHvh1SvKMDg"
+      },
+      {
+        "title": "Jehová Raáh, Dios es mi pastor",
+        "preacher": "José Luis Blanco",
+        "date": "2026-06-28",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/junio/jehova-raah-dios-es-mi-pastor-dom-28-900-a-m.pdf",
+        "image_url": "public/images/predicas/2026/junio/portada-youtube-02-jose.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=BUw5ezv8fSc"
+      },
+      {
+        "title": "Los tres del campo",
+        "preacher": "Josué Blanco",
+        "date": "2026-06-28",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/junio/los-3-del-campo.pdf",
+        "image_url": "public/images/predicas/2026/junio/portada-youtube-03-josue.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=gdR29OjHO-8"
+      }
+    ]
   }
 ]
