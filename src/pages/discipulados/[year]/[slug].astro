@@ -6,6 +6,7 @@ type Entry = (typeof entries)[number] & {
   spotifyPlaylistUrl?: string;
   youtubePlaylistUrl?: string;
 };
+type Download = Entry["downloads"][number];
 
 export function getStaticPaths() {
   return entries.map((entry) => ({
@@ -19,6 +20,9 @@ const monthLabel = entry.month.toUpperCase();
 const pageTitle =
   entry.metaTitle ??
   `${entry.month} ${entry.year} - ${entry.title}${entry.subtitle ? `: ${entry.subtitle}` : ""} - Edificadores Online`;
+const availableDownloads = entry.downloads.filter(
+  (download): download is Download & { url: string } => Boolean(download.url),
+);
 ---
 
 <BaseLayout title={pageTitle} headerClass="mb-12">
@@ -125,7 +129,7 @@ const pageTitle =
         <!-- Download Buttons -->
         <div class="flex flex-col gap-3">
           {
-            entry.downloads.map((download) => (
+            availableDownloads.map((download) => (
               <a
                 href={download.url}
                 target="_blank"
@@ -137,7 +141,7 @@ const pageTitle =
                   →
                 </span>
               </a>
-            ))
+              ))
           }
         </div>
       </div>

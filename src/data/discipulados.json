@@ -162,5 +162,26 @@
     "videoUrl": "https://www.youtube-nocookie.com/embed/PHErCPBafec",
     "coverImage": "/images/discipulado-covers/junio.webp",
     "metaTitle": "Junio 2026 - Jehová Raáh: El Dios Pastor - Edificadores Online"
+  },
+  {
+    "id": "2026-julio",
+    "year": 2026,
+    "month": "Julio",
+    "monthIndex": 7,
+    "slug": "julio",
+    "title": "Jehová Sabaot",
+    "subtitle": "El Dios Guerrero",
+    "heroBlurb": "¿Sientes que las batallas diarias te desgastan o que la ansiedad y el afán ahogan tu caminar?",
+    "summary": "¿Sientes que las batallas diarias te desgastan o que la ansiedad y el afán ahogan tu caminar? Conocer a Jehová Sabaot no es solo saber que Dios es poderoso; es una dirección de vida. Dios no nos llamó a vivir a la defensiva, cargando con el peso del control ni con una mentalidad de víctimas, sino a ser firmes —creyentes bajo respaldo— para encontrar verdadera paz, gobierno y autoridad en lo cotidiano.\nEn este estudio, profundizamos en lo que significa vivir bajo el amparo del \"Dios Guerrero\". Descubriremos que la victoria no es simplemente una reacción impulsiva, sino un llamado a reordenar el interior: la tarea de rendir el control, afinar nuestro oído espiritual para reconocer Su voz por encima del ruido, y dejar que Él pelee nuestras batallas. Cuando el alma se siente bajo presión, no se defiende huyendo o discutiendo con sus propias fuerzas, sino recordando que la armadura de Dios y la quietud son nuestra mayor estrategia.",
+    "application": "Si Jehová Sabaot es el Dios de los ejércitos que entra a la batalla por ti, tus caminos no tienen porqué estar gobernados por el impulso, el orgullo o la prisa. Es tiempo de dejar de pelear desde el ego intentando salvarte a ti mismo, y empezar a permanecer firmes en Su Nombre para que incluso las mayores presiones se transformen en carácter y victoria.",
+    "downloads": [
+      {
+        "label": "Descargar Material Didáctico",
+        "url": "https://downloads.edificadoresonline.com/discipulado/2026/julio/temas-de-julio.pdf"
+      }
+    ],
+    "videoUrl": "https://www.youtube-nocookie.com/embed/kDzKszubIHs",
+    "coverImage": "/images/discipulado-covers/julio.webp",
+    "metaTitle": "Julio 2026 - Jehová Sabaot: El Dios Guerrero - Edificadores Online"
   }
 ]
