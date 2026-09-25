@@ -11,6 +11,11 @@ PDF_PROFILE="${PDF_PROFILE:-/screen}"
 IMAGE_DPI="${PDF_IMAGE_DPI:-96}"
 MONO_DPI="${PDF_MONO_DPI:-150}"
 JPEG_QUALITY="${PDF_JPEG_QUALITY:-55}"
+TARGET_BYTES="${PDF_TARGET_BYTES:-2097152}"
+RASTER_FALLBACK="${PDF_RASTER_FALLBACK:-1}"
+RASTER_DENSITY="${PDF_RASTER_DENSITY:-50}"
+RASTER_WIDTH="${PDF_RASTER_WIDTH:-700}"
+RASTER_QUALITY="${PDF_RASTER_QUALITY:-25}"
 
 slugify() {
   local s="$1"
@@ -44,6 +49,12 @@ fi
 
 echo "Using compression profile: $PDF_PROFILE"
 echo "Image DPI: $IMAGE_DPI, mono DPI: $MONO_DPI, JPEG quality: $JPEG_QUALITY"
+echo "Target max size: $TARGET_BYTES bytes"
+if [ "$RASTER_FALLBACK" = "1" ]; then
+  echo "Raster fallback: enabled (${RASTER_DENSITY}dpi, ${RASTER_WIDTH}px wide, quality ${RASTER_QUALITY})"
+else
+  echo "Raster fallback: disabled"
+fi
 echo ""
 
 for f in "${files[@]}"; do
@@ -80,6 +91,29 @@ for f in "${files[@]}"; do
      -f "$input"
 
   new_size=$(stat -f%z "$outname")
+
+  if [ "$RASTER_FALLBACK" = "1" ] && [ "$new_size" -gt "$TARGET_BYTES" ]; then
+    if command -v magick >/dev/null 2>&1; then
+      tmpdir="$(mktemp -d)"
+      raster_out="$tmpdir/${slug}.pdf"
+
+      magick -density "$RASTER_DENSITY" "$input" \
+        -strip \
+        -resize "${RASTER_WIDTH}x" \
+        -quality "$RASTER_QUALITY" \
+        -compress JPEG \
+        "$raster_out"
+
+      raster_size=$(stat -f%z "$raster_out")
+      if [ "$raster_size" -lt "$new_size" ]; then
+        cp "$raster_out" "$outname"
+        new_size="$raster_size"
+      fi
+      rm -rf "$tmpdir"
+    else
+      echo "   ImageMagick not found; skipping raster fallback"
+    fi
+  fi
 
   reduction=$(awk "BEGIN {printf \"%.1f\", (1 - $new_size / $original_size) * 100}")
 

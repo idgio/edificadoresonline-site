@@ -774,5 +774,140 @@
         "youtube_url": "https://www.youtube.com/watch?v=XHkW5GvEnb4"
       }
     ]
+  },
+  {
+    "month": "Agosto",
+    "featured_image_url": "public/images/discipulado-covers/agosto.webp",
+    "featured_description": "Jehová Towb: la bondad de Dios nos fortalece, bendice, restaura y recuerda que nunca nos olvida. Sus enseñanzas nos invitan a reconocer Su cuidado y responder con gratitud.",
+    "data": [
+      {
+        "title": "Jehová Towb",
+        "preacher": "Lupita de Blanco",
+        "date": "2026-08-02",
+        "pdf_url": null,
+        "image_url": "public/images/predicas/2026/agosto/portada-youtube-ago-lupita.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=8Sx8Nd7nK6k"
+      },
+      {
+        "title": "Jehová Towb, El Dios bueno que fortalece en medio del desánimo",
+        "preacher": "José Luis Blanco",
+        "date": "2026-08-02",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/agosto/jehova-towb-el-dios-bueno-que-fortalece-en-medio-del-desanimo-9am.pdf",
+        "image_url": "public/images/predicas/2026/agosto/portada-youtube-ago-jose.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=lY8FXvyA0d4"
+      },
+      {
+        "title": "Jehová Towb, Parte I",
+        "preacher": "Josué Blanco",
+        "date": "2026-08-02",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/agosto/11am-jehova-towb-parte-1-2.pdf",
+        "image_url": "public/images/predicas/2026/agosto/portada-youtube-ago-josue.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=qVE4nzAdtzY"
+      },
+      {
+        "title": "Jehová Towb, Parte II",
+        "preacher": "Lupita de Blanco",
+        "date": "2026-08-09",
+        "pdf_url": null,
+        "image_url": "public/images/predicas/2026/agosto/portada-youtube-ago-lupita.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=vyhxqoB4uo8"
+      },
+      {
+        "title": "La bondad de Dios frente a la ingratitud humana",
+        "preacher": "José Luis Blanco",
+        "date": "2026-08-09",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/agosto/la-bondad-de-dios-frente-a-la-ingratitud-humana-dom-9-am-9-agosto.pdf",
+        "image_url": "public/images/predicas/2026/agosto/portada-youtube-ago-jose.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=3SI1Ig_rTuE"
+      },
+      {
+        "title": "Jehová Towb, Parte II",
+        "preacher": "Josué Blanco",
+        "date": "2026-08-09",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/agosto/11am-jehova-towb-parte-2.pdf",
+        "image_url": "public/images/predicas/2026/agosto/portada-youtube-ago-josue.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=x_FGuKb0CNs"
+      },
+      {
+        "title": "La bondad de Dios manifestada es nuestra arma más poderosa",
+        "preacher": "José Luis Blanco",
+        "date": "2026-08-13",
+        "pdf_url": null,
+        "image_url": "public/images/predicas/2026/agosto/portada-youtube-ago-jose.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=VNtUx3tfGjw"
+      },
+      {
+        "title": "Jehová Towb, El Dios bueno",
+        "preacher": "Lupita de Blanco",
+        "date": "2026-08-16",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/agosto/jehova-towb-16-agosto-700-am.pdf",
+        "image_url": "public/images/predicas/2026/agosto/portada-youtube-ago-lupita.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=xPZ28ZC8uGs"
+      },
+      {
+        "title": "Jehová Towb, Dios bueno y los hoy de bendición",
+        "preacher": "José Luis Blanco",
+        "date": "2026-08-16",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/agosto/jehova-towb-dios-bueno-y-los-hoy-de-bendicion-dom-9-am-16-agosto.pdf",
+        "image_url": "public/images/predicas/2026/agosto/portada-youtube-ago-jose.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=m1UfooS5tnc"
+      },
+      {
+        "title": "Jehová Towb, Parte III",
+        "preacher": "Josué Blanco",
+        "date": "2026-08-16",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/agosto/11am-jehova-towb-parte-3.pdf",
+        "image_url": "public/images/predicas/2026/agosto/portada-youtube-ago-josue.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=nmx7RZPHf1k"
+      },
+      {
+        "title": "Jehová Towb, Parte IV",
+        "preacher": "Lupita de Blanco",
+        "date": "2026-08-23",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/agosto/jehova-towb-23-agosto-700-am.pdf",
+        "image_url": "public/images/predicas/2026/agosto/portada-youtube-ago-lupita.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=iSgPpXWMYq4"
+      },
+      {
+        "title": "Jehová Towb, El Dios bueno que restaura después de la caída",
+        "preacher": "José Luis Blanco",
+        "date": "2026-08-23",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/agosto/jehova-towb-el-dios-bueno-que-restaura-despues-de-la-caida-dom-9-am-23-agosto.pdf",
+        "image_url": "public/images/predicas/2026/agosto/portada-youtube-ago-jose.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=8ymCegkW7J8"
+      },
+      {
+        "title": "Jehová Towb, Parte IV",
+        "preacher": "Josué Blanco",
+        "date": "2026-08-23",
+        "pdf_url": null,
+        "image_url": "public/images/predicas/2026/agosto/portada-youtube-ago-josue.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=SjLNCdHlms4"
+      },
+      {
+        "title": "Jehová Towb, Porque eres bueno: enséñame a vivir",
+        "preacher": "Fito Vides",
+        "date": "2026-08-30",
+        "pdf_url": null,
+        "image_url": "public/images/predicas/2026/agosto/portada-youtube-ago-fito.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=Lv1qE9Vb0aQ"
+      },
+      {
+        "title": "Jehová Towb, El Dios bueno que nunca nos olvida",
+        "preacher": "José Luis Blanco",
+        "date": "2026-08-30",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/agosto/jehova-towb-el-dios-bueno-que-nunca-te-olvida-dom-9-am-30-agosto.pdf",
+        "image_url": "public/images/predicas/2026/agosto/portada-youtube-ago-jose.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=0juxK26b9gc"
+      },
+      {
+        "title": "Jehová Towb, El Dios bueno, Parte Final",
+        "preacher": "Josué Blanco",
+        "date": "2026-08-30",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/agosto/11am-jehova-towb-parte-final.pdf",
+        "image_url": "public/images/predicas/2026/agosto/portada-youtube-ago-josue.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=ObdfyCpuwn8"
+      }
+    ]
   }
 ]
