@@ -888,7 +888,7 @@
         "title": "Jehová Towb, Porque eres bueno: enséñame a vivir",
         "preacher": "Fito Vides",
         "date": "2026-08-30",
-        "pdf_url": null,
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/agosto/porque-eres-bueno-ensename-a-vivir-estudio-devocional.pdf",
         "image_url": "public/images/predicas/2026/agosto/portada-youtube-ago-fito.webp",
         "youtube_url": "https://www.youtube.com/watch?v=Lv1qE9Vb0aQ"
       },
@@ -907,6 +907,85 @@
         "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/agosto/11am-jehova-towb-parte-final.pdf",
         "image_url": "public/images/predicas/2026/agosto/portada-youtube-ago-josue.webp",
         "youtube_url": "https://www.youtube.com/watch?v=ObdfyCpuwn8"
+      }
+    ]
+  },
+  {
+    "month": "Septiembre",
+    "featured_image_url": "public/images/discipulado-covers/septiembre.webp",
+    "featured_description": "Jehová Hopomonay: el Dios paciente nos enseña a esperar en Él, volver al arrepentimiento y confiar en Su fidelidad aun en medio del desánimo, la desesperación y el duelo.",
+    "data": [
+      {
+        "title": "Jehová Hopomonay, La paciencia que conduce al arrepentimiento",
+        "preacher": "Fito Vides",
+        "date": "2026-09-06",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/septiembre/la-paciencia-que-conduce-al-arrepentimiento-estudio-devocional-sept-6-7am.pdf",
+        "image_url": "public/images/discipulado-covers/septiembre.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=uts7yBrnhpE"
+      },
+      {
+        "title": "Jehová Hopomonay, Dios paciente ante la desesperación",
+        "preacher": "José Luis Blanco",
+        "date": "2026-09-06",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/septiembre/jehova-hopomonay-dios-paciente-ante-la-desesperacion-dom-6-sep-9-am.pdf",
+        "image_url": "public/images/discipulado-covers/septiembre.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=n-OdQ8LmOuo"
+      },
+      {
+        "title": "Jehová Hopomonay, Parte I",
+        "preacher": "Josué Blanco",
+        "date": "2026-09-06",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/septiembre/jehova-hopomonay-parte-1-11am.pdf",
+        "image_url": "public/images/discipulado-covers/septiembre.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=83Yr0lirr2c"
+      },
+      {
+        "title": "Jehová Hopomonay, Aprender a esperar en Dios, la paciencia que nace de la fe",
+        "preacher": "Fito Vides",
+        "date": "2026-09-13",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/septiembre/aprender-a-esperar-en-dios-estudio-devocional-13sep-7am.pdf",
+        "image_url": "public/images/discipulado-covers/septiembre.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=o3jY-tjXlnE"
+      },
+      {
+        "title": "Jehová Hopomonay, Dios paciente en medio del duelo",
+        "preacher": "José Luis Blanco",
+        "date": "2026-09-13",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/septiembre/jehova-hopomonay-dios-paciente-en-medio-del-duelo-13-sep-9-am.pdf",
+        "image_url": "public/images/discipulado-covers/septiembre.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=Ze2fW0XUi7Q"
+      },
+      {
+        "title": "Jehová Hopomonay, Reset en la paciencia",
+        "preacher": "Josué Blanco",
+        "date": "2026-09-13",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/septiembre/reset-en-la-paciencia-11am.pdf",
+        "image_url": "public/images/discipulado-covers/septiembre.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=xtAzoS5hvIU"
+      },
+      {
+        "title": "Jehová Hopomonay, Dios paciente, Parte III",
+        "preacher": "Lupita de Blanco",
+        "date": "2026-09-20",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/septiembre/jehova-hopomonay-20-sept7am.pdf",
+        "image_url": "public/images/discipulado-covers/septiembre.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=UbTyYd8Kj5A"
+      },
+      {
+        "title": "Jehová Hopomonay, El Dios paciente con un pueblo olvidadizo",
+        "preacher": "José Luis Blanco",
+        "date": "2026-09-20",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/septiembre/jehova-hopomonay-20-sept7am.pdf",
+        "image_url": "public/images/discipulado-covers/septiembre.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=w74xMTUWsoU"
+      },
+      {
+        "title": "Cuando Dios no responde rápido",
+        "preacher": "Josué Blanco",
+        "date": "2026-09-20",
+        "pdf_url": "https://downloads.edificadoresonline.com/predicas/2026/septiembre/cuando-dios-no-responde-rapido-11am-20sept.pdf",
+        "image_url": "public/images/discipulado-covers/septiembre.webp",
+        "youtube_url": "https://www.youtube.com/watch?v=nEmtnFcRJ4E"
       }
     ]
   }
