@@ -2,156 +2,84 @@
 import '../styles/global.css';
 
 const churchUrl = 'https://edificadoresonline.com';
-const event = {
-  name: 'Awake',
-  date: 'Fecha por anunciar',
-  time: 'Hora por anunciar',
-  place: 'Lugar por confirmar',
-};
-
+const playlistUrl = 'https://open.spotify.com/playlist/4b8n3kaHHaJz4EP5ziMBKO?si=q6C292KzSwu0csUb5XgjXg&utm_source=whatsapp&pi=iXLLIZmhTHWxR';
+const mapsUrl = 'https://maps.app.goo.gl/F5foaEa865asmgMm9';
+const wazeUrl = 'https://ul.waze.com/ul?venue_id=177471625.1774650716.8843565&overview=yes&utm_campaign=live_map&utm_source=waze_website&utm_medium=lm_share_location';
 const questions = [
-  {
-    question: '¿Cuándo será?',
-    answer: 'La fecha y la hora todavía no están confirmadas. Las publicaremos aquí cuando estén listas.',
-  },
-  {
-    question: '¿Dónde nos vemos?',
-    answer: 'El lugar está por confirmar. Esta página tendrá la dirección antes del encuentro.',
-  },
-  {
-    question: '¿Hay que registrarse?',
-    answer: 'Aún no se ha anunciado si será necesario registrarse. Revisa esta página para conocer los detalles.',
-  },
-  {
-    question: '¿Puedo compartir la invitación?',
-    answer: 'Sí. Usa el botón «Compartir Awake» para enviar esta página a alguien más.',
-  },
+  { question: '¿Para quién es Awake?', answer: 'La invitación a Awake es para jóvenes mayores de 13 años.' },
+  { question: '¿Cuánto cuesta?', answer: 'La entrada es totalmente gratis. Después del encuentro habrá pupusas gratis en el after church.' },
+  { question: '¿Dónde será?', answer: 'Nos vemos en Templo Edificadores el sábado 14 de noviembre a las 5:30 p. m. Puedes abrir la ubicación en Google Maps o Waze desde la sección «Dónde nos vemos».' },
+  { question: '¿Qué pasará esa noche?', answer: 'Pronto compartiremos más detalles.' },
 ];
 ---
-
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f36b48" />
-    <meta name="description" content="Awake: un encuentro para jóvenes de EdificadoresOnline. Pronto compartiremos fecha, hora y lugar." />
+    <meta name="theme-color" content="#355a78" />
+    <meta name="description" content="Awake: una generación despierta. Sábado 14 de noviembre de 2026, 5:30 p. m., Templo Edificadores. Gratis, para jóvenes mayores de 13 años." />
+    <meta property="og:title" content="Awake — Una generación despierta" />
+    <meta property="og:description" content="14 de noviembre · 5:30 p. m. · Templo Edificadores. Entrada gratis y pupusas después del encuentro." />
+    <meta property="og:image" content="https://awake.edificadoresonline.com/images/awake/post.jpg" />
     <link rel="canonical" href="https://awake.edificadoresonline.com/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@900&family=Red+Hat+Text:wght@400;500;700&display=swap" rel="stylesheet" />
-    <title>Awake — Encuentro de jóvenes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <title>Awake — Una generación despierta</title>
   </head>
   <body>
+    <header class="site-header frame">
+      <a class="brand" href="#inicio" aria-label="Generación Edificadores, inicio"><span class="brand-monogram">GE</span><span class="brand-name">GENERACIÓN<br />EDIFICADORES</span></a>
+      <nav aria-label="Navegación principal"><a href="#generacion">La generación</a><a href="#detalles">El evento</a><a href="#ubicacion">Cómo llegar</a></nav>
+      <a class="header-action" href="#detalles">Nos vemos el 14 <span aria-hidden="true">↗</span></a>
+    </header>
     <main>
-      <section class="hero" id="inicio" aria-labelledby="hero-title">
-        <header class="site-header frame">
-          <a class="wordmark" href="#inicio" aria-label="Awake, volver al inicio">awake<span aria-hidden="true">.</span></a>
-          <a class="header-link" href="#detalles">Ver detalles <span aria-hidden="true">↗</span></a>
-        </header>
-
-        <div class="hero-title" id="hero-title">
-          <h1 class="hero-title-top"><span class="masked-line">DESPIERTA</span><span class="masked-line">ALGO NUEVO</span></h1>
-          <div class="hero-title-bottom" aria-hidden="true"><span>DESPIERTA</span><span>ALGO NUEVO</span></div>
-        </div>
-
-        <div class="hero-bottom frame">
-          <p><strong>Awake</strong> es un encuentro para jóvenes: una noche para hacer espacio a la fe, la música y la comunidad.</p>
-          <a class="text-link" href="#detalles">Conoce el encuentro <span aria-hidden="true">↓</span></a>
-        </div>
+      <section class="hero frame" id="inicio" aria-labelledby="hero-title">
+        <div class="hero-meta"><span>Congreso de jóvenes</span><span>14 noviembre 2026 · 5:30 p. m.</span></div>
+        <div class="hero-core"><div class="hero-title-block"><p class="hero-script">una generación</p><h1 id="hero-title"><span>AWAKE</span></h1></div><p class="hero-intro">Awake es el congreso de jóvenes donde comienza una nueva etapa de Generación Edificadores. Ven a vivirla con nosotros.</p></div>
+        <div class="hero-bottom"><a class="primary-link" href="#detalles">Ver detalles del evento <span aria-hidden="true">↗</span></a><p>Templo Edificadores · Entrada gratis</p></div>
       </section>
-
-      <section class="intro-board" id="encuentro" aria-labelledby="intro-title">
-        <div class="board">
-          <div class="board-statement"><h2 id="intro-title">HAY MÁS<br />POR VIVIR.</h2></div>
-          <div class="board-name" aria-label="Awake">AWAKE</div>
-          <div class="board-photo"><img src="/images/worship.webp" width="1200" height="1600" loading="lazy" alt="Persona participando en un momento de adoración en la iglesia" /></div>
-        </div>
-        <div class="intro-copy frame">
-          <p>Hay momentos que nos invitan a parar y escuchar. Awake nace como un espacio para que los jóvenes busquemos a Dios juntos, compartamos con otros y salgamos con una mirada renovada.</p>
-        </div>
+      <section class="manifesto frame" id="generacion" aria-labelledby="manifesto-title">
+        <div class="manifesto-heading"><h2 id="manifesto-title">Una generación</h2><img src="/images/awake/GE_logo.png" alt="Monograma oficial de Generación Edificadores" width="900" height="650" loading="lazy" /></div>
+        <p>Generación Edificadores es una comunidad que busca conocer a Jesús, representarlo y caminar con propósito. En Awake nos reuniremos para celebrar lo que Dios está haciendo y vivir juntos el comienzo de una nueva etapa.</p>
+        <blockquote class="manifesto-verse"><p>«Generación a generación celebrará tus obras, y anunciará tus poderosos hechos»</p><cite>Salmo 145:4 · RVR1960</cite></blockquote>
       </section>
-
-      <section class="details frame" id="detalles" aria-labelledby="details-title">
-        <div class="details-heading">
-          <h2 id="details-title">Lo que sabemos</h2>
-          <p>Estamos preparando el encuentro. Guarda esta página: aquí aparecerá la información confirmada.</p>
-        </div>
-        <div class="detail-grid">
-          <div class="detail-item"><span>Fecha</span><strong>{event.date}</strong></div>
-          <div class="detail-item"><span>Hora</span><strong>{event.time}</strong></div>
-          <div class="detail-item"><span>Lugar</span><strong>{event.place}</strong></div>
-        </div>
-      </section>
-
-      <section class="photo-sequence" aria-labelledby="community-title">
-        <div class="frame photo-heading">
-          <h2 id="community-title">Nos encontramos<br />en comunidad.</h2>
-          <p>Momentos de la vida de nuestra iglesia.</p>
-        </div>
-        <div class="photo-grid frame">
-          <figure class="photo-large"><img src="/images/gathering.webp" width="1600" height="1067" loading="lazy" alt="Personas reunidas durante un servicio de la iglesia" /><figcaption>Juntos</figcaption></figure>
-          <figure><img src="/images/young-speaker.webp" width="1600" height="1067" loading="lazy" alt="Joven compartiendo un mensaje en la iglesia" /><figcaption>Escuchamos</figcaption></figure>
-          <figure><img src="/images/prayer.webp" width="1600" height="1067" loading="lazy" alt="Grupo de personas orando en la iglesia" /><figcaption>Oramos</figcaption></figure>
-        </div>
-      </section>
-
-      <section class="faq frame" id="preguntas" aria-labelledby="faq-title">
-        <h2 id="faq-title">Preguntas<br />frecuentes</h2>
-        <div class="faq-list">
-          {questions.map(({ question, answer }) => (
-            <details name="awake-faq"><summary>{question}<span class="faq-icon" aria-hidden="true"></span></summary><p>{answer}</p></details>
-          ))}
-        </div>
-      </section>
-
-      <section class="closing" id="comparte" aria-labelledby="closing-title">
-        <div class="frame closing-inner">
-          <h2 id="closing-title">ESTO APENAS<br />COMIENZA.</h2>
-          <div class="closing-bottom">
-            <p>Invita a alguien a estar pendiente de Awake contigo.</p>
-            <button type="button" id="share-button" class="share-button">Compartir Awake <span aria-hidden="true">↗</span></button>
-          </div>
-          <p id="share-feedback" class="share-feedback" role="status" aria-live="polite"></p>
-        </div>
-      </section>
+      <section class="event-details" id="detalles" aria-labelledby="details-title"><div class="frame event-layout">
+        <div class="event-copy"><h2 id="details-title">Nos vemos<br />en Awake</h2><div class="event-facts">
+          <p><span>Cuándo</span><strong><time datetime="2026-11-14T17:30:00-06:00">Sábado 14 de noviembre<br />5:30 p. m.</time></strong></p>
+          <p><span>Dónde</span><strong>Templo Edificadores</strong></p><p><span>Para quién</span><strong>Jóvenes mayores de 13 años</strong></p><p><span>Entrada</span><strong>Gratis</strong></p>
+        </div><div class="after-church"><p>After church con pupusas gratis</p></div></div>
+        <figure class="event-poster"><img src="/images/awake/post.jpg" alt="Flyer oficial de Awake: 14 de noviembre, 5:30 p. m., Templo Edificadores, entrada y pupusas gratis" width="1080" height="1440" loading="lazy" /></figure>
+      </div></section>
+      <section class="find-us frame" id="ubicacion" aria-labelledby="location-title"><div><h2 id="location-title">Dónde nos vemos</h2><p>Nos vemos en Templo Edificadores. Abre la ruta en tu app de mapas antes de salir.</p></div><div class="map-links"><a href={mapsUrl} target="_blank" rel="noopener noreferrer">Abrir Google Maps <span aria-hidden="true">↗</span></a><a href={wazeUrl} target="_blank" rel="noopener noreferrer">Abrir Waze <span aria-hidden="true">↗</span></a></div></section>
+      <section class="soundtrack frame" aria-labelledby="playlist-title"><div><h2 id="playlist-title">La música<br />antes de vernos</h2><p>Escucha la playlist de Awake y comparte lo que viene con alguien más.</p></div><a href={playlistUrl} target="_blank" rel="noopener noreferrer">Escuchar en Spotify <span aria-hidden="true">↗</span></a></section>
+      <section class="faq frame" id="preguntas" aria-labelledby="faq-title"><h2 id="faq-title">Antes de llegar</h2><div class="faq-list">{questions.map(({ question, answer }) => (<details><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>))}</div></section>
+      <section class="closing frame" id="comparte" aria-labelledby="closing-title"><div><h2 id="closing-title">Nos vemos<br />despiertos</h2><p>14 de noviembre · 5:30 p. m. · Templo Edificadores</p></div><div class="closing-actions"><button type="button" id="share-button">Compartir Awake <span aria-hidden="true">↗</span></button><p id="share-feedback" role="status" aria-live="polite"></p></div></section>
     </main>
-
-    <footer class="footer">
-      <div class="footer-photo"><img src="/images/community.webp" width="1600" height="1067" loading="lazy" alt="Persona levantando la mano durante un bautismo en la iglesia" /></div>
-      <div class="footer-content">
-        <a class="footer-wordmark" href="#inicio">awake<span aria-hidden="true">.</span></a>
-        <nav aria-label="Enlaces del sitio">
-          <a href="#encuentro">El encuentro</a>
-          <a href="#detalles">Detalles</a>
-          <a href="#preguntas">Preguntas</a>
-          <a href={churchUrl}>EdificadoresOnline ↗</a>
-        </nav>
-        <p>Awake es parte de <a href={churchUrl}>EdificadoresOnline</a>.</p>
-        <small>© {new Date().getFullYear()} EdificadoresOnline</small>
-      </div>
-    </footer>
-
+    <footer class="footer frame"><a class="footer-brand" href="#inicio">AWAKE</a><p>Una generación despierta</p><nav aria-label="Enlaces del pie de página"><a href="#generacion">La generación</a><a href="#detalles">El evento</a><a href="#ubicacion">Cómo llegar</a><a href={churchUrl}>EdificadoresOnline ↗</a></nav><small>© {new Date().getFullYear()} Generación Edificadores</small></footer>
     <script>
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+        const animated = document.querySelectorAll('.manifesto h2, .manifesto > p, .event-copy h2, .event-facts, .after-church, .event-poster, .find-us h2, .map-links, .soundtrack h2, .soundtrack > a, .faq h2, .faq-list, .closing h2, .closing-actions');
+        const observer = new IntersectionObserver((entries) => {
+          for (const entry of entries) {
+            if (!entry.isIntersecting) continue;
+            entry.target.animate([{ opacity: .45, transform: 'translateY(22px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 550, easing: 'cubic-bezier(.2,.7,.2,1)' });
+            observer.unobserve(entry.target);
+          }
+        }, { threshold: .08 });
+        animated.forEach((element) => observer.observe(element));
+      }
       const shareButton = document.querySelector<HTMLButtonElement>('#share-button');
       const feedback = document.querySelector<HTMLElement>('#share-feedback');
       shareButton?.addEventListener('click', async () => {
         const url = window.location.href.split('#')[0];
-        const message = 'Awake: un encuentro para jóvenes de EdificadoresOnline.';
+        const message = 'Awake: una generación despierta. 14 de noviembre, 5:30 p. m., Templo Edificadores.';
         try {
-          if (navigator.share) {
-            await navigator.share({ title: 'Awake', text: message, url });
-            if (feedback) feedback.textContent = '¡Gracias por compartir!';
-          } else if (navigator.clipboard?.writeText) {
-            await navigator.clipboard.writeText(url);
-            if (feedback) feedback.textContent = 'Enlace copiado. ¡Compártelo con alguien!';
-          } else {
-            window.location.href = `mailto:?subject=${encodeURIComponent('Awake')}&body=${encodeURIComponent(`${message}\n${url}`)}`;
-          }
-        } catch (error) {
-          if (error instanceof DOMException && error.name === 'AbortError') return;
-          if (feedback) feedback.textContent = 'No pudimos compartir el enlace. Puedes copiar la dirección de esta página.';
-        }
+          if (navigator.share) { await navigator.share({ title: 'Awake', text: message, url }); if (feedback) feedback.textContent = '¡Gracias por compartir!'; }
+          else if (navigator.clipboard?.writeText) { await navigator.clipboard.writeText(url); if (feedback) feedback.textContent = 'Enlace copiado. ¡Compártelo con alguien!'; }
+          else { window.location.href = `mailto:?subject=${encodeURIComponent('Awake')}&body=${encodeURIComponent(`${message}\n${url}`)}`; }
+        } catch (error) { if (error instanceof DOMException && error.name === 'AbortError') return; if (feedback) feedback.textContent = 'No pudimos compartir el enlace. Copia la dirección de esta página.'; }
       });
     </script>
   </body>
