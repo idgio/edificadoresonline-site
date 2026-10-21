@@ -1,6 +1,12 @@
 # Awake event site
 
-Standalone Astro site for a separate Cloudflare Pages project at `awake.edificadoresonline.com`. The content in `src/pages/index.astro` has placeholder date, time, location, and registration details; update them before announcing the event.
+Standalone Astro site for a separate Cloudflare Pages project at `awake.edificadoresonline.com`. The event is November 14, 2026 at 5:30 p.m. at Templo Edificadores.
+
+## Post-event reveal
+
+The GE LIFE, GE LIGHT, and GE LEAD sections and the leader section are intentionally absent from the public page and build. Publish them no earlier than November 15, 2026, after the event reveal. This static site requires a new deployment to show them. The original group names and descriptions are in the supplied GE Brand Book; get approved leader names and a real team photo before adding the leader section.
+
+The public FAQ uses “Pronto compartiremos más detalles” as placeholder copy for “¿Qué pasará esa noche?”. Replace it with approved copy when available.
 
 ## Local development
 
