@@ -6,6 +6,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { sundaySlots, salvadorDate } from './predicas-slots.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const months = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
@@ -72,37 +73,60 @@ function run(script, cwd) {
 }
 function sha256(buffer) { return crypto.createHash('sha256').update(buffer).digest('hex'); }
 function hmac(key, data) { return crypto.createHmac('sha256', key).update(data).digest(); }
-async function r2Put(key, data) {
-  if (dryRun) return;
+async function r2Request(method, key, data) {
   const endpoint = new URL(env.r2_s3_API_URL.replace(/\/$/, ''));
   const objectPath = '/' + [env.cloudR2Bucket, ...key.split('/')].map(encodeURIComponent).join('/');
   const date = new Date().toISOString().replace(/[:-]|\.\d{3}/g, '');
-  const day = date.slice(0, 8); const hash = sha256(data);
+  const day = date.slice(0, 8); const hash = sha256(data ?? Buffer.alloc(0));
   const headers = `host:${endpoint.host}\nx-amz-content-sha256:${hash}\nx-amz-date:${date}\n`;
-  const canonical = ['PUT',objectPath,'',headers,'host;x-amz-content-sha256;x-amz-date',hash].join('\n');
+  const canonical = [method,objectPath,'',headers,'host;x-amz-content-sha256;x-amz-date',hash].join('\n');
   const scope = `${day}/auto/s3/aws4_request`;
   const toSign = ['AWS4-HMAC-SHA256',date,scope,sha256(Buffer.from(canonical))].join('\n');
   const signing = hmac(hmac(hmac(hmac('AWS4' + env.cloudR2SecretKey, day), 'auto'), 's3'), 'aws4_request');
   const signature = crypto.createHmac('sha256', signing).update(toSign).digest('hex');
   const authorization = `AWS4-HMAC-SHA256 Credential=${env.cloudR2AccessKey}/${scope}, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=${signature}`;
-  const response = await fetch(endpoint.origin + objectPath, { method: 'PUT', headers: { Authorization: authorization, 'x-amz-date': date, 'x-amz-content-sha256': hash, 'content-type': 'application/pdf' }, body: data });
-  if (!response.ok) throw Error(`R2 upload failed for ${key}: ${response.status} ${(await response.text()).match(/<Code>([^<]+)/)?.[1] || ''}`);
+  return fetch(endpoint.origin + objectPath, { method, headers: { Authorization: authorization, 'x-amz-date': date, 'x-amz-content-sha256': hash, ...(method === 'PUT' ? { 'content-type': 'application/pdf' } : {}) }, ...(data ? { body: data } : {}) });
 }
-async function preparePdf(file, prefix) {
+async function r2Put(key, data) {
+  if (dryRun) return 'prepared';
+  const existing = await r2Request('HEAD', key);
+  if (existing.ok) return 'reused';
+  if (existing.status !== 404) throw Error(`R2 existence check failed for ${key}: ${existing.status}`);
+  const response = await r2Request('PUT', key, data);
+  if (!response.ok) throw Error(`R2 upload failed for ${key}: ${response.status} ${(await response.text()).match(/<Code>([^<]+)/)?.[1] || ''}`);
+  return 'uploaded';
+}
+async function preparePdf(file, prefix, localPdf) {
   const work = await fs.mkdtemp(path.join(temp, 'pdf-'));
-  const original = path.join(work, file.name);
-  await driveDownload(file, original);
+  const original = path.join(work, file.name.replace(/\.pptx$/i, '.pdf'));
+  if (localPdf) await fs.copyFile(localPdf, original);
+  else await driveDownload(file, original);
   run('compress-pdf.sh', work);
   const compressed = (await fs.readdir(path.join(work, 'out'))).find((f) => f.endsWith('.pdf'));
   if (!compressed) throw Error(`No compressed PDF for ${file.name}`);
   const bytes = await fs.readFile(path.join(work, 'out', compressed));
   const key = `${prefix}/${year}/${month}/${compressed}`;
-  await r2Put(key, bytes);
+  const uploadStatus = await r2Put(key, bytes);
   const textPath = path.join(output, `${slug(file.name)}.txt`);
   const extracted = spawnSync('gs', ['-q','-sDEVICE=txtwrite','-o','-',original], { encoding: 'utf8', maxBuffer: 20 * 1024 * 1024 });
   if (extracted.status === 0) await fs.writeFile(textPath, extracted.stdout);
-  console.log(`${dryRun ? 'Prepared' : 'Uploaded'} ${key} (${bytes.length} bytes)`);
-  return { sourceName: file.name, url: `${(env.R2_PUBLIC_URL || 'https://downloads.edificadoresonline.com').replace(/\/$/, '')}/${key.split('/').map(encodeURIComponent).join('/')}`, textPath: path.relative(root, textPath), bytes: bytes.length };
+  console.log(`${uploadStatus === 'reused' ? 'Reused' : uploadStatus === 'prepared' ? 'Prepared' : 'Uploaded'} ${key} (${bytes.length} bytes)`);
+  return { sourceName: file.name, url: `${(env.R2_PUBLIC_URL || 'https://downloads.edificadoresonline.com').replace(/\/$/, '')}/${key.split('/').map(encodeURIComponent).join('/')}`, textPath: path.relative(root, textPath), bytes: bytes.length, uploadStatus };
+}
+async function preparePresentation(file) {
+  const work = await fs.mkdtemp(path.join(temp, 'slides-'));
+  const source = path.join(work, file.name);
+  const converted = path.join(work, file.name.replace(/\.pptx$/i, '.pdf'));
+  await driveDownload(file, source);
+  const office = spawnSync('soffice', ['--headless', '--convert-to', 'pdf', '--outdir', work, source], { encoding: 'utf8' });
+  if (office.error?.code === 'ENOENT' && process.platform === 'darwin') {
+    const script = ['on run argv', 'set sourceFile to POSIX file (item 1 of argv)', 'set targetFile to POSIX file (item 2 of argv)',
+      'tell application "Keynote"', 'set deck to open sourceFile', 'export deck to targetFile as PDF', 'close deck saving no', 'end tell', 'end run'];
+    const result = spawnSync('osascript', script.flatMap((line) => ['-e', line]).concat(source, converted), { encoding: 'utf8' });
+    if (result.status !== 0) throw Error(`Keynote conversion failed: ${result.stderr || result.error?.message}`);
+  } else if (office.status !== 0) throw Error(`LibreOffice conversion failed: ${office.stderr || office.error?.message}`);
+  await fs.access(converted);
+  return preparePdf(file, 'predicas', converted);
 }
 async function preparePredicaImage(file, service) {
   const imageWork = await fs.mkdtemp(path.join(temp, 'predica-image-'));
@@ -189,15 +213,26 @@ try {
     for (const image of hours.filter((f) => f.mimeType.startsWith('image/'))) manifest.images.push(await preparePredicaImage(image, 'general'));
     for (const hour of hours.sort((a,b) => a.name.localeCompare(b.name))) {
       if (hour.mimeType !== 'application/vnd.google-apps.folder') continue;
-      const files = await driveList(hour.id);
+      const allFiles = await driveList(hour.id);
+      const files = args['only-file'] ? allFiles.filter((file) => normalize(file.name).includes(normalize(args['only-file']))) : allFiles;
       for (const file of files.filter((f) => f.mimeType === 'application/pdf')) {
         const pdf = await preparePdf(file, 'predicas');
+        manifest.pdfs.push({ ...pdf, service: hour.name });
+      }
+      for (const file of files.filter((f) => f.mimeType === 'application/vnd.openxmlformats-officedocument.presentationml.presentation')) {
+        const pdf = await preparePresentation(file);
         manifest.pdfs.push({ ...pdf, service: hour.name });
       }
       for (const image of files.filter((f) => f.mimeType.startsWith('image/'))) manifest.images.push(await preparePredicaImage(image, hour.name));
     }
     if (!manifest.pdfs.length) throw Error('No sermon PDFs found');
+    if (args['only-file'] && manifest.pdfs.length !== 1) throw Error(`--only-file matched ${manifest.pdfs.length} files; use a more specific fragment`);
+    manifest.partial = Boolean(args['only-file']);
     manifest.youtubeVideos = await youtubeUploads();
+    manifest.expectedServices = sundaySlots(year, months.indexOf(month) + 1);
+    manifest.missingVideoServices = manifest.expectedServices.filter(({ date, service }) =>
+      !manifest.youtubeVideos.some((video) => salvadorDate(video.actualStartTime) === date && video.service === service));
+    console.log(`Sunday video slots: ${manifest.expectedServices.length - manifest.missingVideoServices.length}/${manifest.expectedServices.length}`);
   }
   const manifestPath = path.join(output, 'manifest.json');
   await fs.writeFile(manifestPath, JSON.stringify(manifest, null, 2) + '\n');

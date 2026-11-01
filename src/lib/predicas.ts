@@ -4,6 +4,7 @@ export type Predica = {
   title: string;
   preacher: string;
   date: string;
+  service?: "7:00 am" | "9:00 am" | "11:00 am";
   pdf_url: string | null;
   image_url: string | null;
   youtube_url: string | null;
