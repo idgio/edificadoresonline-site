@@ -150,9 +150,14 @@ async function youtubeUploads() {
     const item = byId.get(new URL(video.url).searchParams.get('v'));
     return { ...video, actualStartTime: item?.liveStreamingDetails?.actualStartTime || null, duration: item?.contentDetails?.duration || null };
   }).filter((video) => {
-    const date = video.actualStartTime || video.publishedAt;
-    const localMonth = new Intl.DateTimeFormat('en-US', { timeZone: 'America/El_Salvador', year: 'numeric', month: '2-digit' }).format(new Date(date));
-    return localMonth === `${String(months.indexOf(month) + 1).padStart(2, '0')}/${year}`;
+    if (!video.actualStartTime) return false;
+    const parts = Object.fromEntries(new Intl.DateTimeFormat('en-US', { timeZone: 'America/El_Salvador', year: 'numeric', month: '2-digit', weekday: 'short', hour: '2-digit', hourCycle: 'h23' }).formatToParts(new Date(video.actualStartTime)).map(({ type, value }) => [type, value]));
+    const duration = video.duration?.match(/^PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?$/);
+    const seconds = duration ? Number(duration[1] || 0) * 3600 + Number(duration[2] || 0) * 60 + Number(duration[3] || 0) : 0;
+    return parts.year === String(year) && parts.month === String(months.indexOf(month) + 1).padStart(2, '0') && parts.weekday === 'Sun' && [7,8,9,10,11,12].includes(Number(parts.hour)) && seconds >= 600;
+  }).map((video) => {
+    const hour = Number(new Intl.DateTimeFormat('en-US', { timeZone: 'America/El_Salvador', hour: '2-digit', hourCycle: 'h23' }).format(new Date(video.actualStartTime)));
+    return { ...video, service: hour < 9 ? '7:00 am' : hour < 11 ? '9:00 am' : '11:00 am' };
   });
 }
 try {
