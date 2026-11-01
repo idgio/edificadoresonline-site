@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
+    "import:monthly": "node utils/monthly-import.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
