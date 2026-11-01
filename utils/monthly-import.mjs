@@ -73,21 +73,28 @@ function run(script, cwd) {
 }
 function sha256(buffer) { return crypto.createHash('sha256').update(buffer).digest('hex'); }
 function hmac(key, data) { return crypto.createHmac('sha256', key).update(data).digest(); }
-async function r2Put(key, data) {
-  if (dryRun) return;
+async function r2Request(method, key, data) {
   const endpoint = new URL(env.r2_s3_API_URL.replace(/\/$/, ''));
   const objectPath = '/' + [env.cloudR2Bucket, ...key.split('/')].map(encodeURIComponent).join('/');
   const date = new Date().toISOString().replace(/[:-]|\.\d{3}/g, '');
-  const day = date.slice(0, 8); const hash = sha256(data);
+  const day = date.slice(0, 8); const hash = sha256(data ?? Buffer.alloc(0));
   const headers = `host:${endpoint.host}\nx-amz-content-sha256:${hash}\nx-amz-date:${date}\n`;
-  const canonical = ['PUT',objectPath,'',headers,'host;x-amz-content-sha256;x-amz-date',hash].join('\n');
+  const canonical = [method,objectPath,'',headers,'host;x-amz-content-sha256;x-amz-date',hash].join('\n');
   const scope = `${day}/auto/s3/aws4_request`;
   const toSign = ['AWS4-HMAC-SHA256',date,scope,sha256(Buffer.from(canonical))].join('\n');
   const signing = hmac(hmac(hmac(hmac('AWS4' + env.cloudR2SecretKey, day), 'auto'), 's3'), 'aws4_request');
   const signature = crypto.createHmac('sha256', signing).update(toSign).digest('hex');
   const authorization = `AWS4-HMAC-SHA256 Credential=${env.cloudR2AccessKey}/${scope}, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=${signature}`;
-  const response = await fetch(endpoint.origin + objectPath, { method: 'PUT', headers: { Authorization: authorization, 'x-amz-date': date, 'x-amz-content-sha256': hash, 'content-type': 'application/pdf' }, body: data });
+  return fetch(endpoint.origin + objectPath, { method, headers: { Authorization: authorization, 'x-amz-date': date, 'x-amz-content-sha256': hash, ...(method === 'PUT' ? { 'content-type': 'application/pdf' } : {}) }, ...(data ? { body: data } : {}) });
+}
+async function r2Put(key, data) {
+  if (dryRun) return 'prepared';
+  const existing = await r2Request('HEAD', key);
+  if (existing.ok) return 'reused';
+  if (existing.status !== 404) throw Error(`R2 existence check failed for ${key}: ${existing.status}`);
+  const response = await r2Request('PUT', key, data);
   if (!response.ok) throw Error(`R2 upload failed for ${key}: ${response.status} ${(await response.text()).match(/<Code>([^<]+)/)?.[1] || ''}`);
+  return 'uploaded';
 }
 async function preparePdf(file, prefix, localPdf) {
   const work = await fs.mkdtemp(path.join(temp, 'pdf-'));
@@ -99,12 +106,12 @@ async function preparePdf(file, prefix, localPdf) {
   if (!compressed) throw Error(`No compressed PDF for ${file.name}`);
   const bytes = await fs.readFile(path.join(work, 'out', compressed));
   const key = `${prefix}/${year}/${month}/${compressed}`;
-  await r2Put(key, bytes);
+  const uploadStatus = await r2Put(key, bytes);
   const textPath = path.join(output, `${slug(file.name)}.txt`);
   const extracted = spawnSync('gs', ['-q','-sDEVICE=txtwrite','-o','-',original], { encoding: 'utf8', maxBuffer: 20 * 1024 * 1024 });
   if (extracted.status === 0) await fs.writeFile(textPath, extracted.stdout);
-  console.log(`${dryRun ? 'Prepared' : 'Uploaded'} ${key} (${bytes.length} bytes)`);
-  return { sourceName: file.name, url: `${(env.R2_PUBLIC_URL || 'https://downloads.edificadoresonline.com').replace(/\/$/, '')}/${key.split('/').map(encodeURIComponent).join('/')}`, textPath: path.relative(root, textPath), bytes: bytes.length };
+  console.log(`${uploadStatus === 'reused' ? 'Reused' : uploadStatus === 'prepared' ? 'Prepared' : 'Uploaded'} ${key} (${bytes.length} bytes)`);
+  return { sourceName: file.name, url: `${(env.R2_PUBLIC_URL || 'https://downloads.edificadoresonline.com').replace(/\/$/, '')}/${key.split('/').map(encodeURIComponent).join('/')}`, textPath: path.relative(root, textPath), bytes: bytes.length, uploadStatus };
 }
 async function preparePresentation(file) {
   const work = await fs.mkdtemp(path.join(temp, 'slides-'));
